@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #070c1a;
+  --paper: #f6f8fb;
+  --cobalt: #2e5bff;
+  --cyan: #2dd4ff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-paper text-ink font-body antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--cobalt);
+  color: #fff;
+}
+
+@layer components {
+  .wrap {
+    @apply mx-auto w-full max-w-wrap px-5 sm:px-8;
+  }
+  .eyebrow {
+    @apply font-mono text-[11px] sm:text-xs uppercase tracking-[0.22em] text-cobalt flex items-center gap-2;
+  }
+  .eyebrow-dark {
+    @apply font-mono text-[11px] sm:text-xs uppercase tracking-[0.22em] text-cyanx flex items-center gap-2;
+  }
+  .eyebrow::before,
+  .eyebrow-dark::before {
+    content: "";
+    @apply inline-block h-1.5 w-1.5 rounded-full bg-current animate-dot-pulse;
+  }
+  .h-display {
+    @apply font-display font-semibold tracking-[-0.02em];
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-grad-brand px-6 py-3 text-sm font-semibold text-white shadow-glow transition-transform duration-200 hover:scale-[1.03] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cobalt;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-line px-6 py-3 text-sm font-semibold transition-colors duration-200 hover:border-cobalt hover:text-cobalt focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cobalt;
+  }
+  .card {
+    @apply rounded-2xl border border-line bg-white shadow-card transition-all duration-300;
+  }
+  .card-hover {
+    @apply hover:-translate-y-1.5 hover:shadow-lift hover:border-cobalt/40;
+  }
+  .glass-dark {
+    @apply rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-md;
+  }
+  .dot-field {
+    background-image: radial-gradient(rgba(155, 170, 200, 0.35) 1px, transparent 1px);
+    background-size: 26px 26px;
+  }
+  .dot-field-dark {
+    background-image: radial-gradient(rgba(120, 145, 200, 0.22) 1px, transparent 1px);
+    background-size: 26px 26px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
