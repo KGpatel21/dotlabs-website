@@ -3,6 +3,7 @@ import FAQ from "@/components/FAQ";
 import ContactSection from "@/components/ContactSection";
 import JsonLd from "@/components/JsonLd";
 import { LogoMarquee, ServicesGrid, IndustriesGrid, WhyUs } from "@/components/Sections";
+import { AISpotlight } from "@/components/Sections3";
 import {
   ProcessTimeline,
   PortfolioGrid,
@@ -37,6 +38,7 @@ export default function HomePage() {
       <Hero />
       <LogoMarquee />
       <ServicesGrid limit={6} />
+      <AISpotlight />
       <IndustriesGrid />
       <WhyUs />
       <ProcessTimeline />

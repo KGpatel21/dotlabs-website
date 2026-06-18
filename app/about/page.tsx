@@ -4,6 +4,7 @@ import StatCounters from "@/components/StatCounters";
 import { Reveal, SectionHeading } from "@/components/Reveal";
 import { WhyUs } from "@/components/Sections";
 import { TeamGrid, Testimonials, CTABand } from "@/components/Sections2";
+import { ApproachGrid, Milestones } from "@/components/Sections3";
 import { buildMetadata, breadcrumbSchema } from "@/lib/seo";
 
 export const metadata = buildMetadata({
@@ -84,7 +85,9 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <ApproachGrid />
       <TeamGrid />
+      <Milestones />
       <WhyUs />
       <Testimonials />
       <CTABand />

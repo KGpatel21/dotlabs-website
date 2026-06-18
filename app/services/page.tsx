@@ -1,8 +1,8 @@
 import PageHero from "@/components/PageHero";
 import JsonLd from "@/components/JsonLd";
 import FAQ from "@/components/FAQ";
-import { ServicesGrid } from "@/components/Sections";
-import { ProcessTimeline, TechStack, CTABand } from "@/components/Sections2";
+import { ProcessTimeline, CTABand } from "@/components/Sections2";
+import { ServicesDeep, AISpotlight, EngagementModels, ProofStrip } from "@/components/Sections3";
 import { buildMetadata, breadcrumbSchema } from "@/lib/seo";
 
 export const metadata = buildMetadata({
@@ -26,11 +26,13 @@ export default function ServicesPage() {
       <PageHero
         eyebrow="Services"
         title="Every capability you need to ship serious software"
-        desc="Strategy, design, engineering, AI, cloud, QA, and support — delivered by one accountable team. Pick a single service or hand us the whole product."
+        desc="Strategy, design, engineering, AI, cloud, QA, and support — delivered by one accountable team. Pick a single service or hand us the whole product, end to end."
       />
-      <ServicesGrid />
+      <ProofStrip />
+      <ServicesDeep />
+      <AISpotlight />
+      <EngagementModels />
       <ProcessTimeline />
-      <TechStack />
       <FAQ limit={10} />
       <CTABand />
     </>

@@ -44,16 +44,18 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           <p className="mt-4 font-mono text-xs uppercase tracking-wider text-slatex">
             {new Date(post.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })} · {post.readTime} · DotLabs Engineering
           </p>
-          <div className="prose-custom mt-10 space-y-6 text-base leading-relaxed text-slatex">
+          <div className="prose-custom mt-10 space-y-8 text-base leading-relaxed text-slatex">
             <p className="text-lg text-ink">{post.excerpt}</p>
-            <p>
-              This article is part of the DotLabs engineering blog. Replace this placeholder body with your
-              full article content — the layout, metadata, structured data, and SEO wiring are already in place.
-            </p>
-            <p>
-              Each post ships with Article schema, breadcrumb schema, canonical URLs, and Open Graph tags, so
-              content published here is fully crawlable and rich-result ready from day one.
-            </p>
+            {post.body.map((section) => (
+              <section key={section.heading}>
+                <h2 className="h-display text-xl text-ink sm:text-2xl">{section.heading}</h2>
+                <div className="mt-3 space-y-4">
+                  {section.paras.map((para, i) => (
+                    <p key={i}>{para}</p>
+                  ))}
+                </div>
+              </section>
+            ))}
           </div>
           <Link href="/blog" className="btn-ghost mt-12">
             <Icon name="arrow" className="h-4 w-4 rotate-180" /> Back to all articles

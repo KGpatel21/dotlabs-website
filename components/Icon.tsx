@@ -26,6 +26,14 @@ const paths: Record<string, JSX.Element> = {
   mail: <><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 7.5l9 6 9-6" /></>,
   phone: <path d="M5 4h4l1.5 4.5-2.3 1.7a13 13 0 005.6 5.6l1.7-2.3L20 15v4a1.5 1.5 0 01-1.7 1.5C10 19.6 4.4 14 3.5 5.7A1.5 1.5 0 015 4z" />,
   pin: <path d="M12 21c4.5-4.4 7-7.8 7-11a7 7 0 10-14 0c0 3.2 2.5 6.6 7 11zM12 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" />,
+  bot: <><rect x="4" y="8" width="16" height="11" rx="2.5" /><path d="M12 4v4M9 13v.01M15 13v.01M9.5 16h5M2.5 12v3M21.5 12v3" /></>,
+  database: <path d="M12 3c4.4 0 8 1.3 8 3s-3.6 3-8 3-8-1.3-8-3 3.6-3 8-3zM4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3" />,
+  target: <><circle cx="12" cy="12" r="8.5" /><circle cx="12" cy="12" r="4.5" /><circle cx="12" cy="12" r="1" /></>,
+  lock: <><rect x="4.5" y="10.5" width="15" height="10" rx="2" /><path d="M8 10.5V7a4 4 0 018 0v3.5M12 14.5v2.5" /></>,
+  search: <><circle cx="11" cy="11" r="6.5" /><path d="M16 16l4.5 4.5" /></>,
+  refresh: <path d="M21 12a9 9 0 11-2.64-6.36M21 4.5V10h-5.5" />,
+  gauge: <><path d="M4.5 18.5a9 9 0 1115 0" /><path d="M12 18.5l3.5-5" /><circle cx="12" cy="18.5" r="1" /></>,
+  scale: <path d="M12 3v18M7 21h10M5 7h14M5 7l-2.5 5a3 3 0 006 0L5 7zM19 7l-2.5 5a3 3 0 006 0L19 7z" />,
 };
 
 export default function Icon({ name, className = "h-6 w-6" }: { name: string; className?: string }) {

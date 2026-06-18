@@ -16,15 +16,15 @@ const columns = [
   },
   {
     title: "Services",
-    links: services.slice(0, 6).map((s) => ({ label: s.title, href: "/services" })),
+    links: services.slice(0, 6).map((s) => ({ label: s.title, href: `/services#${s.slug}` })),
   },
   {
     title: "Expertise",
     links: [
       { label: "Industries we serve", href: "/industries" },
       { label: "Technologies", href: "/technologies" },
-      { label: "Dedicated teams", href: "/services" },
-      { label: "AI & automation", href: "/services" },
+      { label: "Dedicated teams", href: "/services#dedicated-teams" },
+      { label: "AI & automation", href: "/services#ai-solutions" },
     ],
   },
 ];

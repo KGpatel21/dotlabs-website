@@ -25,6 +25,7 @@ export default function ContactSection() {
     }
     setError("");
     setSent(true);
+    // TODO: wire to API/CRM — no data is sent anywhere yet.
     // Wire this to your API route, CRM, or email service:
     // await fetch("/api/contact", { method: "POST", body: form });
   }
