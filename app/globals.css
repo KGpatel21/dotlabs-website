@@ -7,6 +7,8 @@
   --paper: #f6f8fb;
   --cobalt: #2e5bff;
   --cyan: #2dd4ff;
+  --violet: #7c5cff;
+  --teal: #1fd0b0;
 }
 
 html {
@@ -19,7 +21,7 @@ body {
 }
 
 ::selection {
-  background: var(--cobalt);
+  background: var(--violet);
   color: #fff;
 }
 
@@ -41,8 +43,13 @@ body {
   .h-display {
     @apply font-display font-semibold tracking-[-0.02em];
   }
+  /* Primary CTA keeps the cobalt→cyan brand gradient */
   .btn-primary {
     @apply inline-flex items-center justify-center gap-2 rounded-full bg-grad-brand px-6 py-3 text-sm font-semibold text-white shadow-glow transition-transform duration-200 hover:scale-[1.03] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cobalt;
+  }
+  /* Solid light CTA — for use on top of the colourful aurora bands */
+  .btn-on-color {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-ink shadow-[0_8px_30px_rgba(7,12,26,0.25)] transition-transform duration-200 hover:scale-[1.03] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white;
   }
   .btn-ghost {
     @apply inline-flex items-center justify-center gap-2 rounded-full border border-line px-6 py-3 text-sm font-semibold transition-colors duration-200 hover:border-cobalt hover:text-cobalt focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cobalt;
@@ -51,11 +58,18 @@ body {
     @apply rounded-2xl border border-line bg-white shadow-card transition-all duration-300;
   }
   .card-hover {
-    @apply hover:-translate-y-1.5 hover:shadow-lift hover:border-cobalt/40;
+    @apply hover:-translate-y-1.5 hover:shadow-lift hover:border-violet/40;
   }
   .glass-dark {
     @apply rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-md;
   }
+  /* Animated aurora surface for hero / CTA bands */
+  .aurora-surface {
+    background-image: linear-gradient(115deg, #1b3fd0 0%, #5b2fe8 38%, #7c5cff 58%, #2dd4ff 100%);
+    background-size: 220% 220%;
+    @apply animate-aurora;
+  }
+  /* Light dotted texture */
   .dot-field {
     background-image: radial-gradient(rgba(155, 170, 200, 0.35) 1px, transparent 1px);
     background-size: 26px 26px;
@@ -63,6 +77,30 @@ body {
   .dot-field-dark {
     background-image: radial-gradient(rgba(120, 145, 200, 0.22) 1px, transparent 1px);
     background-size: 26px 26px;
+  }
+  /* Neural "synapse" texture — dots plus faint diagonal connective lines (brain motif) */
+  .neural-field {
+    background-image:
+      radial-gradient(rgba(124, 92, 255, 0.18) 1px, transparent 1.4px),
+      radial-gradient(rgba(45, 212, 255, 0.14) 1px, transparent 1.4px),
+      linear-gradient(60deg, transparent 49.5%, rgba(124, 92, 255, 0.06) 50%, transparent 50.5%),
+      linear-gradient(-60deg, transparent 49.5%, rgba(46, 91, 255, 0.05) 50%, transparent 50.5%);
+    background-size: 32px 32px, 32px 32px, 64px 64px, 64px 64px;
+    background-position: 0 0, 16px 16px, 0 0, 0 0;
+  }
+  .neural-field-dark {
+    background-image:
+      radial-gradient(rgba(140, 120, 255, 0.20) 1px, transparent 1.5px),
+      radial-gradient(rgba(45, 212, 255, 0.16) 1px, transparent 1.5px),
+      linear-gradient(60deg, transparent 49.4%, rgba(140, 120, 255, 0.08) 50%, transparent 50.6%),
+      linear-gradient(-60deg, transparent 49.4%, rgba(45, 212, 255, 0.06) 50%, transparent 50.6%);
+    background-size: 34px 34px, 34px 34px, 68px 68px, 68px 68px;
+    background-position: 0 0, 17px 17px, 0 0, 0 0;
+  }
+  /* Decorative gradient hairline to separate same-tone sections */
+  .section-divider {
+    height: 1px;
+    background-image: linear-gradient(90deg, transparent, rgba(124, 92, 255, 0.35), rgba(45, 212, 255, 0.35), transparent);
   }
 }
 

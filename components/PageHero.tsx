@@ -1,4 +1,5 @@
 import { Reveal } from "./Reveal";
+import { HeroNeural } from "./Decor";
 
 export default function PageHero({
   eyebrow,
@@ -11,7 +12,13 @@ export default function PageHero({
 }) {
   return (
     <section className="relative overflow-hidden bg-ink bg-grad-ink pb-16 pt-36 text-white md:pb-20 md:pt-44">
-      <div className="absolute inset-0 dot-field-dark" aria-hidden />
+      <div className="absolute inset-0 neural-field-dark opacity-60" aria-hidden />
+      <div
+        className="pointer-events-none absolute -right-24 top-1/2 hidden w-[420px] -translate-y-1/2 opacity-25 lg:block"
+        aria-hidden
+      >
+        <HeroNeural className="h-auto w-full animate-float" />
+      </div>
       <div className="wrap relative">
         <Reveal>
           <p className="eyebrow-dark">{eyebrow}</p>

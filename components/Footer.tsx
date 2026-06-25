@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Logo from "./Logo";
 import Icon from "./Icon";
+import { NeuralBackdrop } from "./Decor";
 import { site, services } from "@/lib/data";
 
 const columns = [
@@ -8,6 +9,7 @@ const columns = [
     title: "Company",
     links: [
       { label: "About us", href: "/about" },
+      { label: "Hire developers", href: "/hire-developers" },
       { label: "Portfolio", href: "/portfolio" },
       { label: "Careers", href: "/careers" },
       { label: "Blog", href: "/blog" },
@@ -23,7 +25,7 @@ const columns = [
     links: [
       { label: "Industries we serve", href: "/industries" },
       { label: "Technologies", href: "/technologies" },
-      { label: "Dedicated teams", href: "/services#dedicated-teams" },
+      { label: "Dedicated teams", href: "/hire-developers" },
       { label: "AI & automation", href: "/services#ai-solutions" },
     ],
   },
@@ -32,7 +34,9 @@ const columns = [
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden bg-ink text-mist">
-      <div className="absolute inset-0 dot-field-dark opacity-60" aria-hidden />
+      <div className="aurora-surface h-1 w-full" aria-hidden />
+      <NeuralBackdrop className="pointer-events-none absolute inset-0 h-full w-full opacity-40" />
+      <div className="absolute inset-0 dot-field-dark opacity-50" aria-hidden />
       <div className="wrap relative grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-5 lg:py-20">
         <div className="lg:col-span-2">
           <Logo dark />

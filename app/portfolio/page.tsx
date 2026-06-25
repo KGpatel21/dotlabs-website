@@ -18,8 +18,8 @@ export default function PortfolioPage() {
       <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Portfolio", path: "/portfolio" }])} />
       <PageHero
         eyebrow="Portfolio"
-        title="300+ projects. Here's how a few of them went."
-        desc="Every case study below follows the same honest format: the problem we were handed, what we built, and the number that changed because of it."
+        title="300+ projects delivered for clients across four continents"
+        desc="From European healthcare to Gulf logistics and US SaaS, every case study below follows the same honest format: the problem we were handed, what we built, and the number that changed because of it."
       />
       <ProofStrip />
       <PortfolioGrid />

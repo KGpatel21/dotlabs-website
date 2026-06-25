@@ -76,7 +76,7 @@ export function ServicesGrid({ limit }: { limit?: number }) {
 export function IndustriesGrid() {
   return (
     <section className="relative overflow-hidden bg-ink bg-grad-ink py-20 text-white lg:py-28">
-      <div className="absolute inset-0 dot-field-dark" aria-hidden />
+      <div className="absolute inset-0 neural-field-dark opacity-70" aria-hidden />
       <div className="wrap relative">
         <SectionHeading
           dark

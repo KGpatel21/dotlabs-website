@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import type { ReactNode } from "react";
+import { SectionDecor } from "./Decor";
 
 export function Reveal({
   children,
@@ -44,6 +45,7 @@ export function SectionHeading({
   const center = align === "center";
   return (
     <Reveal className={`max-w-3xl ${center ? "mx-auto text-center" : ""}`}>
+      <SectionDecor align={center ? "center" : "left"} className="mb-4 opacity-90" />
       <p className={`${dark ? "eyebrow-dark" : "eyebrow"} ${center ? "justify-center" : ""}`}>{eyebrow}</p>
       <h2 className={`h-display mt-3 text-3xl sm:text-4xl lg:text-[2.65rem] leading-[1.12] ${dark ? "text-white" : "text-ink"}`}>
         {title}

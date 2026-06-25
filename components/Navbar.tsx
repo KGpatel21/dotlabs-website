@@ -8,6 +8,7 @@ import Logo from "./Logo";
 
 const links = [
   { href: "/services", label: "Services" },
+  { href: "/hire-developers", label: "Hire Developers" },
   { href: "/industries", label: "Industries" },
   { href: "/portfolio", label: "Portfolio" },
   { href: "/technologies", label: "Technologies" },
@@ -30,26 +31,40 @@ export default function Navbar() {
 
   useEffect(() => setOpen(false), [pathname]);
 
+  // The top of every page is a dark hero, so when the bar is transparent its
+  // contents must be light. Once scrolled (or the mobile menu is open) the bar
+  // turns white and its contents switch to dark.
+  const solid = scrolled || open;
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled ? "border-b border-line bg-white/80 backdrop-blur-xl shadow-card" : "bg-transparent"
+        solid ? "border-b border-line bg-white/80 backdrop-blur-xl shadow-card" : "bg-transparent"
       }`}
     >
       <div className="wrap flex h-16 items-center justify-between md:h-[72px]">
-        <Logo />
-        <nav aria-label="Primary" className="hidden items-center gap-7 lg:flex">
-          {links.map((l) => (
-            <Link
-              key={l.href}
-              href={l.href}
-              className={`text-sm font-medium transition-colors hover:text-cobalt ${
-                pathname.startsWith(l.href) ? "text-cobalt" : "text-slatex"
-              }`}
-            >
-              {l.label}
-            </Link>
-          ))}
+        <Logo dark={!solid} />
+        <nav aria-label="Primary" className="hidden items-center gap-6 lg:flex">
+          {links.map((l) => {
+            const active = pathname.startsWith(l.href);
+            return (
+              <Link
+                key={l.href}
+                href={l.href}
+                className={`text-sm font-medium transition-colors ${
+                  solid
+                    ? active
+                      ? "text-cobalt"
+                      : "text-slatex hover:text-cobalt"
+                    : active
+                      ? "text-white"
+                      : "text-white/75 hover:text-white"
+                }`}
+              >
+                {l.label}
+              </Link>
+            );
+          })}
         </nav>
         <div className="hidden lg:block">
           <Link href="/contact" className="btn-primary !px-5 !py-2.5">
@@ -62,9 +77,9 @@ export default function Navbar() {
           aria-label="Toggle navigation menu"
           onClick={() => setOpen((v) => !v)}
         >
-          <span className={`h-0.5 w-6 bg-ink transition-transform ${open ? "translate-y-2 rotate-45" : ""}`} />
-          <span className={`h-0.5 w-6 bg-ink transition-opacity ${open ? "opacity-0" : ""}`} />
-          <span className={`h-0.5 w-6 bg-ink transition-transform ${open ? "-translate-y-2 -rotate-45" : ""}`} />
+          <span className={`h-0.5 w-6 transition-transform ${solid ? "bg-ink" : "bg-white"} ${open ? "translate-y-2 rotate-45" : ""}`} />
+          <span className={`h-0.5 w-6 transition-opacity ${solid ? "bg-ink" : "bg-white"} ${open ? "opacity-0" : ""}`} />
+          <span className={`h-0.5 w-6 transition-transform ${solid ? "bg-ink" : "bg-white"} ${open ? "-translate-y-2 -rotate-45" : ""}`} />
         </button>
       </div>
 

@@ -98,3 +98,12 @@ These render and behave correctly in the browser, but **aren't connected to a ba
 ```
 
 **Tip:** the fastest way to find everything is a single search across the repo for `PLACEHOLDER` (all the critical config values are tagged) and a second search for `TODO` (functional wiring points).
+
+---
+
+## Hire Developers page (added) — placeholders to confirm
+
+- **Indicative hourly rates** in `lib/hire.ts` (e.g. "from $22/hr") are illustrative starting points. Replace with your real published rates, or keep as "from" anchors and rely on "request a quote."
+- **Claims to verify before publishing**: "profiles in 48 hours", "2-week no-risk trial", "replacement within 48 hours", "160 hours/month". These are standard industry promises — make sure you can actually honour them.
+- **WhatsApp / phone** used in CTAs (`wa.me/919876543210`, etc.) are still placeholders (see contact section).
+- Engagement-model names/terms can be tuned to how you actually sell (e.g. rename "Team Extension" → "Staff Augmentation" if preferred).

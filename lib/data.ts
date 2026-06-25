@@ -436,52 +436,70 @@ export const engagementModels = [
 // ─── Portfolio / case studies ────────────────────────────────────────────────
 export const portfolio = [
   {
-    title: "Neo Banking Middleware",
-    industry: "FinTech · KSA",
-    problem: "A Saudi digital bank needed compliant middleware connecting core banking with national credit and identity services.",
-    solution: "We built a Spring Boot microservices layer with Keycloak-secured APIs integrating SIMAH, Nafith, IBAN validation, and SAMA reporting.",
-    tech: ["Java 21", "Spring Boot", "Keycloak", "PostgreSQL", "AWS"],
-    impact: "Cut customer onboarding from 2 days to under 9 minutes and passed regulatory audit on first submission.",
+    title: "National Health Booking Platform",
+    industry: "HealthTech · Germany",
+    problem:
+      "A European healthcare network was losing patients to no-shows and phone-queue drop-off across 140+ clinics with no unified booking system.",
+    solution:
+      "We built a multi-tenant scheduling platform with real-time availability, automated reminders, insurance-aware intake forms, and GDPR-compliant patient records.",
+    tech: ["Java 21", "Spring Boot", "PostgreSQL", "React", "AWS"],
+    impact:
+      "Cut no-show rates by 38% and moved 70% of bookings to self-service within the first six months across all clinics.",
   },
   {
-    title: "Cold Outreach SaaS Platform",
-    industry: "SaaS · Global",
-    problem: "A sales-tech startup needed an email outreach platform to compete with established players — on a startup budget.",
-    solution: "Multi-tenant SaaS with campaign sequencing, inbox rotation, deliverability tooling, and usage-based billing on a three-tier model.",
-    tech: ["Next.js", "TypeScript", "Spring Boot 3", "Redis", "Hetzner"],
-    impact: "Launched in 14 weeks; processing 1M+ emails/month within the first quarter at 99.95% uptime.",
+    title: "Omnichannel Retail Replatform",
+    industry: "E-commerce · United Kingdom",
+    problem:
+      "A UK fashion retailer's legacy monolith couldn't handle seasonal traffic spikes and took weeks to ship even minor catalogue changes.",
+    solution:
+      "We re-architected the storefront into a headless commerce stack with a composable CMS, edge caching, and a real-time inventory sync across stores and warehouses.",
+    tech: ["Next.js", "TypeScript", "Node.js", "Redis", "Vercel"],
+    impact:
+      "Handled 5x Black Friday load with zero downtime and reduced page load times by 54%, lifting conversion by 22%.",
   },
   {
-    title: "Airport Flight Information System",
-    industry: "Aviation · Japan",
-    problem: "A logistics leader needed real-time flight information displays synchronized across terminals with zero tolerance for stale data.",
-    solution: "Event-driven backend with sub-second propagation, failover display controllers, and an operations dashboard for staff.",
-    tech: ["Java", "Spring Boot", "WebSockets", "MySQL", "Docker"],
-    impact: "99.99% display uptime across terminals and a 40% drop in passenger information desk queries.",
+    title: "Fleet & Logistics Control Tower",
+    industry: "Logistics · United Arab Emirates",
+    problem:
+      "A Gulf logistics operator managed thousands of daily deliveries through spreadsheets and radio calls, with no live visibility into fleet status.",
+    solution:
+      "We delivered an event-driven control tower with live GPS tracking, route optimisation, driver mobile apps, and an operations dashboard with predictive ETAs.",
+    tech: ["Java", "Spring Boot", "Kafka", "MongoDB", "Kubernetes"],
+    impact:
+      "Improved on-time delivery from 81% to 96% and reduced fuel costs 17% through optimised routing across the fleet.",
   },
   {
-    title: "Algorithmic Trading Dashboard",
-    industry: "Capital Markets · India",
-    problem: "A proprietary trading desk needed automated execution with strict risk controls across NIFTY, BANKNIFTY, and SENSEX.",
-    solution: "Broker-integrated bot with SL/TP automation, Bollinger-band strategies, partial profit booking, and a real-time React dashboard.",
-    tech: ["Python", "React", "AWS Lightsail", "Dhan API", "Netlify"],
-    impact: "Reduced manual order handling to zero and enforced 100% of risk rules automatically across every session.",
+    title: "Wealth Management Portal",
+    industry: "FinTech · Singapore",
+    problem:
+      "A Singapore wealth firm needed a secure client portal consolidating multi-asset portfolios that were scattered across disconnected systems.",
+    solution:
+      "We built a regulated portal with consolidated portfolio analytics, document vaults, MAS-aligned audit trails, and role-based access for advisors and clients.",
+    tech: ["Java 21", "Spring Security", "PostgreSQL", "Angular", "Azure"],
+    impact:
+      "Reduced advisor reporting time by 60% and onboarded $400M+ in assets onto the platform within the first year.",
   },
   {
-    title: "AI Code Review Agent",
-    industry: "DevTools · Global",
-    problem: "Engineering teams were losing senior hours to repetitive pull-request review and inconsistent standards.",
-    solution: "An LLM-powered agent that reviews diffs against team conventions, flags security issues, and drafts fix suggestions inline.",
-    tech: ["OpenAI", "LangChain", "Node.js", "GitHub API", "RAG"],
-    impact: "Cut median review turnaround by 60% and caught 3x more convention violations than manual review alone.",
+    title: "AI Customer-Support Agent",
+    industry: "SaaS · United States",
+    problem:
+      "A fast-scaling US SaaS company was drowning in repetitive support tickets, with response times slipping and senior staff pulled into triage.",
+    solution:
+      "We deployed a retrieval-grounded AI agent that resolves common tickets end-to-end, drafts replies for complex cases, and escalates with full context to humans.",
+    tech: ["OpenAI", "LangChain", "Python", "Vector DB", "RAG"],
+    impact:
+      "Auto-resolved 47% of inbound tickets and cut median first response from 6 hours to under 4 minutes.",
   },
   {
-    title: "Multi-Vertical Corporate Platform",
-    industry: "Conglomerate · India",
-    problem: "A diversified group spanning petroleum, exports, real estate, and education needed one credible digital presence.",
-    solution: "An enterprise corporate platform with vertical-specific sections, investor-grade design language, and a headless CMS.",
-    tech: ["Next.js", "Tailwind CSS", "Framer Motion", "Vercel"],
-    impact: "Unified seven business verticals under one brand and doubled inbound partnership inquiries in 90 days.",
+    title: "Smart Factory Monitoring Suite",
+    industry: "Manufacturing · Australia",
+    problem:
+      "An Australian manufacturer had no real-time view of machine health, learning about costly breakdowns only after production had already stopped.",
+    solution:
+      "We built an IoT monitoring suite ingesting sensor telemetry for live dashboards, anomaly detection, and predictive-maintenance alerts before failures occur.",
+    tech: ["Java", "Spring Boot", "InfluxDB", "React", "Docker"],
+    impact:
+      "Reduced unplanned downtime by 43% and extended average machine service life through earlier intervention.",
   },
 ];
 

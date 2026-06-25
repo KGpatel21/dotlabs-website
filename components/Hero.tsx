@@ -6,6 +6,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import Icon from "./Icon";
 import { trustBadges } from "@/lib/data";
 import StatCounters from "./StatCounters";
+import { HeroNeural } from "./Decor";
 
 function DotConstellation() {
   const ref = useRef<HTMLCanvasElement>(null);
@@ -89,20 +90,34 @@ function DotConstellation() {
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-ink bg-grad-ink text-white">
-      <div className="absolute inset-0 dot-field-dark" aria-hidden />
+      <div className="absolute inset-0 neural-field-dark opacity-60" aria-hidden />
       <DotConstellation />
+      {/* extra aurora bloom for depth + colour */}
+      <div
+        className="pointer-events-none absolute -right-32 top-0 h-[640px] w-[640px] rounded-full opacity-40 blur-3xl"
+        style={{ background: "radial-gradient(circle, rgba(124,92,255,0.55), transparent 65%)" }}
+        aria-hidden
+      />
+
+      {/* brain graphic — focal on large screens, faint backdrop on mobile */}
+      <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 items-center justify-center lg:flex" aria-hidden>
+        <HeroNeural className="h-[80%] w-auto animate-float" />
+      </div>
+      <div className="pointer-events-none absolute right-[-90px] top-24 w-[340px] opacity-[0.16] sm:w-[440px] lg:hidden" aria-hidden>
+        <HeroNeural className="h-auto w-full" />
+      </div>
 
       <div className="wrap relative flex min-h-[92svh] flex-col justify-center pb-16 pt-32 md:pt-40">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.21, 0.6, 0.35, 1] }}
-          className="max-w-3xl"
+          className="max-w-3xl lg:max-w-2xl"
         >
-          <p className="eyebrow-dark">Software development company</p>
+          <p className="eyebrow-dark">AI-driven software development company</p>
           <h1 className="h-display mt-5 text-4xl leading-[1.08] sm:text-5xl lg:text-[3.6rem]">
             Transforming ideas into{" "}
-            <span className="bg-grad-brand bg-clip-text text-transparent">scalable digital solutions</span>
+            <span className="bg-grad-aurora-tri bg-clip-text text-transparent">scalable digital solutions</span>
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-mist sm:text-lg">
             DotLabs designs and engineers custom software, web and mobile apps, SaaS platforms, and
@@ -132,7 +147,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.25, ease: [0.21, 0.6, 0.35, 1] }}
-          className="glass-dark mt-16 px-6 py-7 sm:px-10"
+          className="glass-dark relative mt-16 max-w-3xl px-6 py-7 sm:px-10"
         >
           <StatCounters dark compact />
         </motion.div>

@@ -92,7 +92,7 @@ export function PortfolioGrid({ limit }: { limit?: number }) {
 export function TechStack() {
   return (
     <section className="relative overflow-hidden bg-ink bg-grad-ink py-20 text-white lg:py-28">
-      <div className="absolute inset-0 dot-field-dark" aria-hidden />
+      <div className="absolute inset-0 neural-field-dark opacity-70" aria-hidden />
       <div className="wrap relative">
         <SectionHeading
           dark
@@ -165,7 +165,8 @@ export function TeamGrid({ limit }: { limit?: number }) {
   );
 }
 
-export function Testimonials() {
+export function Testimonials({ limit }: { limit?: number }) {
+  const list = limit ? testimonials.slice(0, limit) : testimonials;
   return (
     <section className="bg-white py-20 lg:py-28">
       <div className="wrap">
@@ -175,7 +176,7 @@ export function Testimonials() {
           desc="98% satisfaction isn't a vanity metric — it's renewals, referrals, and second projects."
         />
         <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {testimonials.map((t, i) => (
+          {list.map((t, i) => (
             <Reveal key={t.name} delay={Math.min(i * 0.05, 0.25)}>
               <figure className="card card-hover flex h-full flex-col p-7">
                 <div className="flex gap-1 text-amber-400" aria-label={`${t.rating} out of 5 stars`}>
@@ -240,25 +241,72 @@ export function BlogPreview({ limit = 3 }: { limit?: number }) {
   );
 }
 
+export function HireBand() {
+  const chips = ["Java / Spring Boot", "React & Next.js", "Python", "React Native", "AI / ML", "DevOps & Cloud"];
+  return (
+    <section className="bg-white py-20 lg:py-28">
+      <div className="wrap">
+        <div className="relative overflow-hidden rounded-3xl aurora-surface px-7 py-12 text-white sm:px-12 lg:py-16">
+          <div className="absolute inset-0 neural-field-dark opacity-60" aria-hidden />
+          <div className="relative grid items-center gap-10 lg:grid-cols-[1.2fr_0.8fr]">
+            <div>
+              <p className="eyebrow-dark !text-white">Hire Developers</p>
+              <h2 className="h-display mt-4 max-w-xl text-3xl sm:text-4xl">
+                Need engineers, not a whole project? Hire our developers directly.
+              </h2>
+              <p className="mt-4 max-w-xl text-white/85">
+                Extend your team with pre-vetted DotLabs engineers on an hourly, monthly, or
+                team-extension basis. Matched profiles in 48 hours and a 2-week no-risk trial — you
+                interview, approve, and keep full control of the IP.
+              </p>
+              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+                <Link href="/hire-developers" className="btn-on-color">
+                  Hire developers <Icon name="arrow" className="h-4 w-4" />
+                </Link>
+                <Link
+                  href="/hire-developers"
+                  className="btn-ghost border-white/40 text-white hover:border-white hover:bg-white/10 hover:text-white"
+                >
+                  See engagement models
+                </Link>
+              </div>
+            </div>
+            <ul className="flex flex-wrap gap-2 lg:justify-end">
+              {chips.map((c) => (
+                <li
+                  key={c}
+                  className="rounded-full border border-white/25 bg-white/10 px-3.5 py-1.5 text-sm font-medium text-white backdrop-blur-sm"
+                >
+                  {c}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function CTABand() {
   return (
-    <section className="relative overflow-hidden bg-ink py-20 text-white lg:py-24">
-      <div className="absolute inset-0 bg-grad-ink" aria-hidden />
-      <div className="absolute inset-0 dot-field-dark" aria-hidden />
+    <section className="relative overflow-hidden aurora-surface py-20 text-white lg:py-24">
+      <div className="absolute inset-0 neural-field-dark opacity-70" aria-hidden />
+      <div className="absolute inset-0 bg-ink/10" aria-hidden />
       <div className="wrap relative text-center">
         <Reveal>
-          <p className="eyebrow-dark justify-center">Start a conversation</p>
+          <p className="eyebrow-dark justify-center !text-white">Start a conversation</p>
           <h2 className="h-display mx-auto mt-4 max-w-2xl text-3xl sm:text-4xl">
             Tell us what you're building. We'll tell you exactly how we'd build it.
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-mist">
+          <p className="mx-auto mt-4 max-w-xl text-white/85">
             A 30-minute discovery call with an engineer — scope, honest timeline, and a fixed estimate within 48 hours. No sales scripts.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <Link href="/contact" className="btn-primary">
+            <Link href="/contact" className="btn-on-color">
               Book a free consultation <Icon name="arrow" className="h-4 w-4" />
             </Link>
-            <a href="https://wa.me/919876543210" className="btn-ghost border-white/20 text-white hover:border-cyanx hover:text-cyanx">
+            <a href="https://wa.me/919876543210" className="btn-ghost border-white/40 text-white hover:border-white hover:bg-white/10 hover:text-white">
               Chat on WhatsApp
             </a>
           </div>
