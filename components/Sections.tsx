@@ -107,7 +107,7 @@ export function WhyUs() {
         <div className="lg:sticky lg:top-28 lg:self-start">
           <SectionHeading
             align="left"
-            eyebrow="Why choose DotLabs"
+            eyebrow="Why choose Sparken Technologies"
             title="The vendor checklist your procurement team wishes everyone passed"
             desc="We win deals against larger agencies for one reason: we behave like the partner companies hoped those agencies would be."
           />

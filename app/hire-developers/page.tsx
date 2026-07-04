@@ -16,9 +16,9 @@ import {
 } from "@/lib/hire";
 
 export const metadata = buildMetadata({
-  title: "Hire Dedicated Developers — Hourly, Monthly & Team Extension | DotLabs",
+  title: "Hire Dedicated Developers — Hourly, Monthly & Team Extension | Sparken Technologies",
   description:
-    "Hire pre-vetted dedicated developers from DotLabs on an hourly, monthly, or team-extension basis. Java, React, Node, Python, mobile, AI/ML, DevOps and QA engineers — profiles in 48 hours, 2-week no-risk trial.",
+    "Hire pre-vetted dedicated developers from Sparken Technologies on an hourly, monthly, or team-extension basis. Java, React, Node, Python, mobile, AI/ML, DevOps and QA engineers — profiles in 48 hours, 2-week no-risk trial.",
   path: "/hire-developers",
   keywords: [
     "hire dedicated developers",
@@ -43,7 +43,7 @@ export default function HireDevelopersPage() {
       <PageHero
         eyebrow="Hire Developers"
         title="Hire dedicated developers, ready in 48 hours"
-        desc="Extend your team with pre-vetted DotLabs engineers — hourly, monthly, or as a full dedicated pod. You interview and approve every developer, start with a 2-week no-risk trial, and keep full control of the work and the IP."
+        desc="Extend your team with pre-vetted Sparken Technologies engineers — hourly, monthly, or as a full dedicated pod. You interview and approve every developer, start with a 2-week no-risk trial, and keep full control of the work and the IP."
       />
 
       {/* Engagement models — white */}
@@ -169,7 +169,7 @@ export default function HireDevelopersPage() {
       <section className="bg-white py-20 lg:py-28">
         <div className="wrap">
           <SectionHeading
-            eyebrow="Why DotLabs"
+            eyebrow="Why Sparken Technologies"
             title="Talent you can trust, without the hiring risk"
             desc="Everything that makes in-house hiring slow and risky — vetting, retention, ramp-up, replacement — sits with us."
           />
@@ -198,7 +198,7 @@ export default function HireDevelopersPage() {
               One transparent rate. No surprise invoices.
             </h2>
             <p className="mt-4 text-slatex">
-              Hiring through DotLabs replaces a stack of hidden employer costs with a single predictable
+              Hiring through Sparken Technologies replaces a stack of hidden employer costs with a single predictable
               number. Everything needed to keep a developer productive is already included.
             </p>
             <Link href="/contact" className="btn-primary mt-8">

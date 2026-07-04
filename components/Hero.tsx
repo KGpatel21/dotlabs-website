@@ -120,7 +120,7 @@ export default function Hero() {
             <span className="bg-grad-aurora-tri bg-clip-text text-transparent">scalable digital solutions</span>
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-mist sm:text-lg">
-            DotLabs designs and engineers custom software, web and mobile apps, SaaS platforms, and
+            Sparken Technologies designs and engineers custom software, web and mobile apps, SaaS platforms, and
             AI solutions for ambitious companies. 50+ senior engineers. 300+ projects shipped.
             One accountable partner from first call to long-term support.
           </p>

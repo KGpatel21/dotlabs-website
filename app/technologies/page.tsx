@@ -8,7 +8,7 @@ import { buildMetadata, breadcrumbSchema } from "@/lib/seo";
 export const metadata = buildMetadata({
   title: "Technologies — React, Next.js, Java, Spring Boot, AI & Cloud Stack",
   description:
-    "DotLabs' technology stack: React, Next.js, Angular, Vue on the frontend; Java, Spring Boot, Node.js, .NET on the backend; PostgreSQL, MongoDB; AWS, Azure, GCP; Docker, Kubernetes; OpenAI, LangChain, and RAG systems.",
+    "Sparken Technologies' technology stack: React, Next.js, Angular, Vue on the frontend; Java, Spring Boot, Node.js, .NET on the backend; PostgreSQL, MongoDB; AWS, Azure, GCP; Docker, Kubernetes; OpenAI, LangChain, and RAG systems.",
   path: "/technologies",
   keywords: [
     "React development company",

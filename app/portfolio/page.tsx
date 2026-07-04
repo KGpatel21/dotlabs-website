@@ -7,7 +7,7 @@ import { buildMetadata, breadcrumbSchema } from "@/lib/seo";
 export const metadata = buildMetadata({
   title: "Portfolio & Case Studies — 300+ Software Projects Delivered",
   description:
-    "Browse DotLabs case studies: banking middleware, SaaS platforms, AI agents, trading systems, and enterprise software — each with the problem, solution, tech stack, and measurable business impact.",
+    "Browse Sparken Technologies case studies: banking middleware, SaaS platforms, AI agents, trading systems, and enterprise software — each with the problem, solution, tech stack, and measurable business impact.",
   path: "/portfolio",
   keywords: ["software development case studies", "software development portfolio"],
 });

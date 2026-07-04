@@ -42,7 +42,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           </nav>
           <h1 className="h-display mt-6 text-3xl leading-[1.15] text-ink sm:text-4xl">{post.title}</h1>
           <p className="mt-4 font-mono text-xs uppercase tracking-wider text-slatex">
-            {new Date(post.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })} · {post.readTime} · DotLabs Engineering
+            {new Date(post.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })} · {post.readTime} · Sparken Technologies Engineering
           </p>
           <div className="prose-custom mt-10 space-y-8 text-base leading-relaxed text-slatex">
             <p className="text-lg text-ink">{post.excerpt}</p>

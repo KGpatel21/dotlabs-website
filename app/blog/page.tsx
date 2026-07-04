@@ -9,7 +9,7 @@ import { buildMetadata, breadcrumbSchema } from "@/lib/seo";
 export const metadata = buildMetadata({
   title: "Blog — Software Development Insights for Founders & CTOs",
   description:
-    "Practical articles on SaaS development, AI agents, choosing a software development company, Spring Boot microservices, Next.js SEO, and outsourcing models — written by the DotLabs engineering team.",
+    "Practical articles on SaaS development, AI agents, choosing a software development company, Spring Boot microservices, Next.js SEO, and outsourcing models — written by the Sparken Technologies engineering team.",
   path: "/blog",
   keywords: ["software development blog", "SaaS development guide", "AI agents in business"],
 });

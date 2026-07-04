@@ -1,4 +1,4 @@
-# DotLabs — Company Website
+# Sparken Technologies — Company Website
 
 Enterprise-grade marketing website built with **Next.js 14 (App Router) + TypeScript + Tailwind CSS + Framer Motion**.
 
@@ -60,5 +60,5 @@ and `app/globals.css`.
 
 - **Display:** Space Grotesk · **Body:** Inter · **Labels/data:** JetBrains Mono
 - **Palette:** Ink `#070C1A`, Paper `#F6F8FB`, Cobalt `#2E5BFF` → Cyan `#2DD4FF` gradient
-- **Signature:** the DotLabs "dot" — pulsing dot eyebrows, dot-grid backgrounds,
+- **Signature:** the Sparken Technologies "dot" — pulsing dot eyebrows, dot-grid backgrounds,
   an animated dot-constellation hero canvas, and dot-node process timeline.

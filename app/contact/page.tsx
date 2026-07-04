@@ -5,11 +5,11 @@ import FAQ from "@/components/FAQ";
 import { buildMetadata, breadcrumbSchema } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Contact DotLabs — Book a Free Software Consultation",
+  title: "Contact Sparken Technologies — Book a Free Software Consultation",
   description:
-    "Contact DotLabs for a free software development consultation. Email, phone, WhatsApp, or the project form — an engineer replies within one business day with scope and a fixed estimate.",
+    "Contact Sparken Technologies for a free software development consultation. Email, phone, WhatsApp, or the project form — an engineer replies within one business day with scope and a fixed estimate.",
   path: "/contact",
-  keywords: ["hire software development company", "free software consultation", "contact DotLabs"],
+  keywords: ["hire software development company", "free software consultation", "contact Sparken Technologies"],
 });
 
 export default function ContactPage() {

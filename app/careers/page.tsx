@@ -7,11 +7,11 @@ import { CTABand } from "@/components/Sections2";
 import { buildMetadata, breadcrumbSchema } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Careers at DotLabs — Build Software That Ships",
+  title: "Careers at Sparken Technologies — Build Software That Ships",
   description:
-    "Join DotLabs: open roles for senior Java/Spring Boot engineers, React/Next.js developers, AI engineers, product designers, QA, and DevOps. Remote-friendly, engineering-led culture.",
+    "Join Sparken Technologies: open roles for senior Java/Spring Boot engineers, React/Next.js developers, AI engineers, product designers, QA, and DevOps. Remote-friendly, engineering-led culture.",
   path: "/careers",
-  keywords: ["software developer jobs Ahmedabad", "remote software engineer jobs", "DotLabs careers"],
+  keywords: ["software developer jobs Ahmedabad", "remote software engineer jobs", "Sparken Technologies careers"],
 });
 
 const roles = [
@@ -39,7 +39,7 @@ export default function CareersPage() {
       <PageHero
         eyebrow="Careers"
         title="Do the best engineering work of your career"
-        desc="No legacy maintenance purgatory, no bench time. At DotLabs you ship modern products for real clients, with seniors who review your code and a ladder that rewards craft."
+        desc="No legacy maintenance purgatory, no bench time. At Sparken Technologies you ship modern products for real clients, with seniors who review your code and a ladder that rewards craft."
       />
       <section className="bg-paper py-20 lg:py-28">
         <div className="wrap">
@@ -73,7 +73,7 @@ export default function CareersPage() {
       <section className="bg-white py-20 lg:py-28">
         <div className="wrap">
           <SectionHeading
-            eyebrow="Why DotLabs"
+            eyebrow="Why Sparken Technologies"
             title="What working here actually feels like"
           />
           <ul className="mx-auto mt-12 grid max-w-4xl gap-4 sm:grid-cols-2">

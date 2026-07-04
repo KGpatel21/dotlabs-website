@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Icon from "./Icon";
 import { Reveal, SectionHeading } from "./Reveal";
-import { process, portfolio, techStack, team, testimonials, posts } from "@/lib/data";
+import { process, portfolio, techStack, founder, teamPods, testimonials, posts } from "@/lib/data";
 
 export function ProcessTimeline() {
   return (
@@ -129,37 +129,48 @@ const avatarGrads = [
 ];
 
 export function TeamGrid({ limit }: { limit?: number }) {
-  const list = limit ? team.slice(0, limit) : team;
+  const pods = limit ? teamPods.slice(0, limit) : teamPods;
   return (
     <section className="bg-paper py-20 lg:py-28">
       <div className="wrap">
         <SectionHeading
-          eyebrow="The people behind the dot"
-          title="50+ engineers, designers, and architects — here are the leads"
-          desc="Real names, real specializations. The people on this page are the people on your calls."
+          eyebrow="The team"
+          title="A founder-led team organised around eight disciplines"
+          desc="Engineering leadership on every engagement, backed by dedicated pods for each layer of the stack."
         />
-        <div className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-          {list.map((m, i) => (
-            <Reveal key={m.name} delay={Math.min(i * 0.04, 0.3)}>
-              <article className="card card-hover h-full p-5 text-center sm:p-6">
-                <span
-                  className={`mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br ${avatarGrads[i % avatarGrads.length]} font-display text-lg font-semibold text-white sm:h-20 sm:w-20`}
-                  aria-hidden
-                >
-                  {m.initials}
+
+        <Reveal className="mt-14">
+          <article className="card relative overflow-hidden p-7 sm:p-9 lg:flex lg:items-center lg:gap-8">
+            <div className="absolute inset-x-0 top-0 h-1 aurora-surface" aria-hidden />
+            <span
+              className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-[#7C5CFF] to-[#2DD4FF] font-display text-2xl font-semibold text-white"
+              aria-hidden
+            >
+              {founder.initials}
+            </span>
+            <div className="mt-5 lg:mt-0">
+              <h3 className="h-display text-xl text-ink">{founder.name}</h3>
+              <p className="mt-0.5 text-sm font-medium text-cobalt">{founder.role}</p>
+              <p className="mt-1 font-mono text-[11px] uppercase tracking-wider text-slatex">{founder.area}</p>
+              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slatex">{founder.bio}</p>
+            </div>
+          </article>
+        </Reveal>
+
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {pods.map((p, i) => (
+            <Reveal key={p.discipline} delay={Math.min(i * 0.04, 0.28)}>
+              <article className="card card-hover h-full p-6">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-cobalt/10 text-cobalt">
+                  <Icon name={p.icon} className="h-5 w-5" />
                 </span>
-                <h3 className="h-display mt-4 text-sm text-ink sm:text-base">{m.name}</h3>
-                <p className="mt-1 text-xs font-medium text-cobalt sm:text-sm">{m.role}</p>
-                <p className="mt-1.5 font-mono text-[10px] uppercase tracking-wider text-slatex sm:text-[11px]">{m.area}</p>
+                <h3 className="h-display mt-4 text-base text-ink">{p.discipline}</h3>
+                <p className="mt-1 font-mono text-[10px] uppercase tracking-wider text-violet-600">{p.stack}</p>
+                <p className="mt-2 text-sm leading-relaxed text-slatex">{p.focus}</p>
               </article>
             </Reveal>
           ))}
         </div>
-        <Reveal className="mt-10 text-center">
-          <p className="text-sm text-slatex">
-            …plus 38 more engineers, QA specialists, and DevOps leads across our delivery teams.
-          </p>
-        </Reveal>
       </div>
     </section>
   );
@@ -255,7 +266,7 @@ export function HireBand() {
                 Need engineers, not a whole project? Hire our developers directly.
               </h2>
               <p className="mt-4 max-w-xl text-white/85">
-                Extend your team with pre-vetted DotLabs engineers on an hourly, monthly, or
+                Extend your team with pre-vetted Sparken Technologies engineers on an hourly, monthly, or
                 team-extension basis. Matched profiles in 48 hours and a 2-week no-risk trial — you
                 interview, approve, and keep full control of the IP.
               </p>

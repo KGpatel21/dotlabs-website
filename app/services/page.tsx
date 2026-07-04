@@ -8,7 +8,7 @@ import { buildMetadata, breadcrumbSchema } from "@/lib/seo";
 export const metadata = buildMetadata({
   title: "Software Development Services — Web, Mobile, SaaS, AI & Enterprise",
   description:
-    "Explore DotLabs' software development services: custom software, web and mobile development, SaaS products, AI agents, ERP/CRM, cloud & DevOps, QA, and dedicated development teams.",
+    "Explore Sparken Technologies' software development services: custom software, web and mobile development, SaaS products, AI agents, ERP/CRM, cloud & DevOps, QA, and dedicated development teams.",
   path: "/services",
   keywords: [
     "software development services",

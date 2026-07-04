@@ -126,7 +126,7 @@ export const hireProcess = [
 
 export const whyHire = [
   { icon: "check", title: "Pre-vetted senior talent", desc: "Every engineer clears a structured technical assessment before reaching your shortlist." },
-  { icon: "bot", title: "Employees, not freelancers", desc: "Full-time DotLabs engineers with no divided focus and a team behind them." },
+  { icon: "bot", title: "Employees, not freelancers", desc: "Full-time Sparken Technologies engineers with no divided focus and a team behind them." },
   { icon: "gauge", title: "48-hour shortlists", desc: "Profiles in two days and onboarding in days — not the weeks in-house hiring takes." },
   { icon: "refresh", title: "Replacement guarantee", desc: "If a developer leaves or isn't working out, we replace them within 48 hours with full knowledge transfer." },
   { icon: "lock", title: "Your IP, your control", desc: "You own all code and IP. An NDA is signed on every engagement, and you direct the day-to-day work." },
@@ -145,7 +145,7 @@ export const whatsIncluded = [
 export const hireFaqs = [
   {
     q: "Are these freelancers or full-time employees?",
-    a: "Full-time DotLabs engineers. They work exclusively on your project for the duration of the engagement, with the accountability and continuity that freelancers can't offer.",
+    a: "Full-time Sparken Technologies engineers. They work exclusively on your project for the duration of the engagement, with the accountability and continuity that freelancers can't offer.",
   },
   {
     q: "What's the minimum engagement?",

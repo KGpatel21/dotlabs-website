@@ -1,22 +1,23 @@
 // ───────────────────────────────────────────────────────────────────────────
-// Central content for the DotLabs site. Edit values here and every page updates.
+// Central content for the Sparken Technologies site. Edit values here and every page updates.
 // Items flagged in INFO_NEEDED.md are placeholders to replace before launch.
 // ───────────────────────────────────────────────────────────────────────────
 
 export const site = {
-  name: "DotLabs",
+  name: "Sparken Technologies",
+  shortName: "Sparken",
   tagline: "Transforming Ideas Into Scalable Digital Solutions",
-  url: "https://www.dotlabs.dev", // PLACEHOLDER — set real domain
-  email: "hello@dotlabs.dev", // PLACEHOLDER
-  phone: "+91 98765 43210", // PLACEHOLDER
-  whatsapp: "https://wa.me/919876543210", // PLACEHOLDER
-  address: "DotLabs HQ, Ahmedabad, Gujarat, India", // PLACEHOLDER
-  founded: 2014, // PLACEHOLDER — used in "years in business" copy
+  url: "https://www.sparkentechnologies.com",
+  email: "info@sparkentechnologies.com",
+  phone: "+91 98765 43210", // PLACEHOLDER — set real phone
+  whatsapp: "https://wa.me/919876543210", // PLACEHOLDER — set real WhatsApp
+  address: "Sparken Technologies, Ahmedabad, Gujarat, India",
+  founded: 2014, // used in "years in business" copy
   social: {
-    linkedin: "https://www.linkedin.com/company/dotlabs", // PLACEHOLDER
-    twitter: "https://twitter.com/dotlabs", // PLACEHOLDER
-    github: "https://github.com/dotlabs", // PLACEHOLDER
-    instagram: "https://instagram.com/dotlabs", // PLACEHOLDER
+    linkedin: "https://www.linkedin.com/company/sparken-technologies", // PLACEHOLDER — confirm handle
+    twitter: "https://twitter.com/sparkentech", // PLACEHOLDER — confirm handle
+    github: "https://github.com/sparkentechnologies", // PLACEHOLDER — confirm handle
+    instagram: "https://instagram.com/sparkentechnologies", // PLACEHOLDER — confirm handle
   },
 };
 
@@ -385,7 +386,7 @@ export const industries = [
   },
 ];
 
-// ─── Why DotLabs ─────────────────────────────────────────────────────────────
+// ─── Why Sparken Technologies ─────────────────────────────────────────────────────────────
 export const whyUs = [
   { title: "Senior, accountable team", desc: "Every project is staffed with engineers who have shipped production systems — and a single point of contact who answers for outcomes." },
   { title: "Agile, visible delivery", desc: "Two-week sprints, demo every Friday, and a live project board you can open any time. No black boxes." },
@@ -501,6 +502,28 @@ export const portfolio = [
     impact:
       "Reduced unplanned downtime by 43% and extended average machine service life through earlier intervention.",
   },
+  {
+    title: "Insurance Claims Automation Platform",
+    industry: "InsurTech · Netherlands",
+    problem:
+      "A Dutch insurer processed motor and property claims through email and manual review, averaging 11 days per settlement and rising complaint volumes.",
+    solution:
+      "We built a straight-through claims platform with document OCR, rules-based triage, fraud-signal scoring, and an adjuster workbench for the cases that genuinely need humans.",
+    tech: ["Java 21", "Spring Boot", "Camunda", "PostgreSQL", "Azure"],
+    impact:
+      "68% of standard claims now settle without manual touch, cutting average settlement time from 11 days to 36 hours.",
+  },
+  {
+    title: "University Learning Platform",
+    industry: "EdTech · Canada",
+    problem:
+      "A Canadian university group ran six campuses on a legacy LMS that failed under exam-week load and couldn't support hybrid learning.",
+    solution:
+      "We delivered a cloud-native learning platform with live classes, proctored assessments, offline-capable mobile apps, and analytics dashboards for faculty.",
+    tech: ["Next.js", "Node.js", "PostgreSQL", "WebRTC", "AWS"],
+    impact:
+      "Served 40,000+ students with 99.98% uptime through two full exam cycles and raised course-completion rates by 14%.",
+  },
 ];
 
 // ─── Technology stack (used by homepage chips) ───────────────────────────────
@@ -562,24 +585,29 @@ export const techPrinciples = [
 ];
 
 // ─── Team ────────────────────────────────────────────────────────────────────
-export const team = [
-  { name: "Krutarth Patel", role: "Founder & Principal Engineer", area: "Architecture · FinTech · AI", initials: "KP" },
-  { name: "Aarav Mehta", role: "Solutions Architect", area: "Microservices · Cloud", initials: "AM" },
-  { name: "Priya Sharma", role: "Engineering Lead, Backend", area: "Java · Spring Boot", initials: "PS" },
-  { name: "Rohan Desai", role: "Engineering Lead, Frontend", area: "React · Next.js", initials: "RD" },
-  { name: "Sneha Iyer", role: "Head of Product Design", area: "UX Research · Design Systems", initials: "SI" },
-  { name: "Vikram Joshi", role: "DevOps Lead", area: "Kubernetes · AWS", initials: "VJ" },
-  { name: "Ananya Rao", role: "AI Engineering Lead", area: "LLMs · RAG · Agents", initials: "AR" },
-  { name: "Kunal Shah", role: "QA Lead", area: "Automation · Performance", initials: "KS" },
-  { name: "Meera Nair", role: "Senior Mobile Engineer", area: "iOS · Android · Flutter", initials: "MN" },
-  { name: "Devansh Gupta", role: "Senior Backend Engineer", area: "Node.js · PostgreSQL", initials: "DG" },
-  { name: "Ishita Verma", role: "Senior Product Designer", area: "UI · Prototyping", initials: "IV" },
-  { name: "Arjun Pillai", role: "Data Engineer", area: "Pipelines · Analytics", initials: "AP" },
+export const founder = {
+  name: "Krutarth Patel",
+  role: "Founder & Principal Engineer",
+  area: "Architecture · FinTech · AI",
+  initials: "KP",
+  bio: "Backend engineer by trade with deep experience in regulated banking middleware and enterprise integrations. Personally reviews the architecture on every major Sparken engagement.",
+};
+
+// Team presented as discipline pods (headcounts, not named individuals)
+export const teamPods = [
+  { discipline: "Backend Engineering", icon: "database", stack: "Java · Spring Boot · Node.js · Python", focus: "APIs, microservices, integrations, and data-heavy systems" },
+  { discipline: "Frontend Engineering", icon: "code", stack: "React · Next.js · Angular · TypeScript", focus: "Fast, accessible web apps and design-system driven UI" },
+  { discipline: "Mobile Engineering", icon: "smartphone", stack: "React Native · Flutter · iOS · Android", focus: "Cross-platform and native apps with store-ready polish" },
+  { discipline: "AI Engineering", icon: "bot", stack: "LLMs · RAG · Agents · MLOps", focus: "Production AI features, automation, and intelligent agents" },
+  { discipline: "Cloud & DevOps", icon: "cloud", stack: "AWS · Azure · Kubernetes · CI/CD", focus: "Infrastructure, reliability, and zero-downtime releases" },
+  { discipline: "Product Design", icon: "target", stack: "UX Research · Figma · Design Systems", focus: "Interfaces users understand the first time they see them" },
+  { discipline: "QA & Automation", icon: "search", stack: "Cypress · Playwright · Selenium · API testing", focus: "Automated coverage that keeps releases boring" },
+  { discipline: "Delivery & PM", icon: "users", stack: "Agile · Scrum · Weekly demos", focus: "Transparent planning, honest status, and predictable delivery" },
 ];
 
 // ─── Company story & milestones (used by /about) ─────────────────────────────
 export const aboutStory = [
-  "DotLabs began with a small team building banking middleware for regulated markets — systems where a bug isn't an inconvenience, it's a compliance incident. That environment shaped everything about how we work: rigorous reviews, automated testing, and documentation that survives audits.",
+  "Sparken Technologies began with a small team building banking middleware for regulated markets — systems where a bug isn't an inconvenience, it's a compliance incident. That environment shaped everything about how we work: rigorous reviews, automated testing, and documentation that survives audits.",
   "Today we're 50+ engineers, designers, and architects serving 153+ clients across 12+ industries, from venture-backed SaaS startups to enterprise groups spanning multiple verticals. The fintech discipline never left — it just got applied to everything we build.",
   "We stay deliberately mid-sized. Large enough to staff full product teams with 24/7 support; small enough that the founder still reviews architecture on every major engagement. That's the balance our clients tell us they can't find elsewhere — the rigor of a big firm without the layers, and the responsiveness of a small one without the risk.",
 ];
@@ -601,73 +629,73 @@ export const milestones = [
 // ─── Testimonials ────────────────────────────────────────────────────────────
 export const testimonials = [
   {
-    quote: "DotLabs rebuilt our core platform without a single day of downtime. Their engineers think like owners — they pushed back on requirements when it saved us money.",
-    name: "Faisal Al-Rashid",
-    role: "CTO",
-    company: "Gulf Digital Bank",
+    quote: "Sparken Technologies rebuilt our core platform without a single day of downtime. Their engineers think like owners — they pushed back on requirements when it saved us money.",
+    name: "Chief Technology Officer",
+    role: "Digital banking",
+    company: "GCC",
     rating: 5,
   },
   {
-    quote: "We interviewed five agencies. DotLabs was the only one that asked about our unit economics before quoting. Fourteen weeks later we had a SaaS product paying for itself.",
-    name: "Emily Carter",
-    role: "Co-founder",
-    company: "OutreachIQ",
+    quote: "We interviewed five agencies. Sparken was the only one that asked about our unit economics before quoting. Fourteen weeks later we had a SaaS product paying for itself.",
+    name: "Co-founder",
+    role: "B2B SaaS",
+    company: "United States",
     rating: 5,
   },
   {
     quote: "Their dedicated team integrated with ours so seamlessly that our investors assumed we'd hired in-house. Communication is their superpower.",
-    name: "Hiroshi Tanaka",
-    role: "VP Engineering",
-    company: "Kansai Logistics Systems",
+    name: "VP of Engineering",
+    role: "Logistics technology",
+    company: "Japan",
     rating: 5,
   },
   {
-    quote: "The AI agent DotLabs built reviews every pull request before a human sees it. Our senior engineers got roughly a day a week back. ROI was obvious within a month.",
-    name: "Sarah Mitchell",
-    role: "Director of Engineering",
-    company: "Forge DevTools",
+    quote: "The AI agent Sparken built reviews every pull request before a human sees it. Our senior engineers got roughly a day a week back. ROI was obvious within a month.",
+    name: "Director of Engineering",
+    role: "Developer tools",
+    company: "United States",
     rating: 5,
   },
   {
-    quote: "From RERA compliance reporting to the buyer-facing portal, they understood Indian real estate better than vendors twice their size.",
-    name: "Rajesh Agarwal",
-    role: "Managing Director",
-    company: "Skyline Estates Group",
+    quote: "From compliance reporting to the buyer-facing portal, they understood our regulatory landscape better than vendors twice their size.",
+    name: "Managing Director",
+    role: "Real estate group",
+    company: "India",
     rating: 5,
   },
   {
-    quote: "Honest estimates, weekly demos, and zero surprises at invoice time. DotLabs is the first vendor we've renewed three years running.",
-    name: "Laura Hoffmann",
-    role: "Head of Digital",
-    company: "MedCare Europe",
+    quote: "Honest estimates, weekly demos, and zero surprises at invoice time. Sparken Technologies is the first vendor we've renewed three years running.",
+    name: "Head of Digital",
+    role: "Healthcare network",
+    company: "Germany",
     rating: 5,
   },
 ];
 
 // ─── FAQ ─────────────────────────────────────────────────────────────────────
 export const faqs = [
-  { q: "What does a software development company like DotLabs actually do?", a: "DotLabs designs, builds, and maintains custom software — web platforms, mobile apps, SaaS products, AI solutions, and enterprise systems. We handle everything from discovery and UI/UX design through development, QA, deployment, and long-term support." },
-  { q: "How much does custom software development cost?", a: "Most DotLabs projects range from $10,000 for a focused MVP to $150,000+ for enterprise platforms. After a free discovery call we provide a fixed, milestone-based estimate so you know the full cost before development begins." },
+  { q: "What does a software development company like Sparken Technologies actually do?", a: "Sparken Technologies designs, builds, and maintains custom software — web platforms, mobile apps, SaaS products, AI solutions, and enterprise systems. We handle everything from discovery and UI/UX design through development, QA, deployment, and long-term support." },
+  { q: "How much does custom software development cost?", a: "Most Sparken Technologies projects range from $10,000 for a focused MVP to $150,000+ for enterprise platforms. After a free discovery call we provide a fixed, milestone-based estimate so you know the full cost before development begins." },
   { q: "How long does it take to build a custom software product?", a: "A typical MVP ships in 8–12 weeks. Larger enterprise or SaaS platforms run 4–9 months. We work in two-week sprints with weekly demos, so you see working software from the first month." },
   { q: "Why should I hire a software development company instead of freelancers?", a: "A company gives you a full team — architects, developers, designers, QA, and DevOps — plus continuity, code review, documented processes, and accountability under contract. With freelancers, a single departure can stall your entire product." },
-  { q: "What is a dedicated development team and when do I need one?", a: "A dedicated development team is a group of vetted engineers who work exclusively on your product under your direction, with DotLabs handling hiring, payroll, and retention. It suits companies that need to scale engineering fast without months of recruitment." },
-  { q: "Does DotLabs offer staff augmentation services?", a: "Yes. We place senior React, Next.js, Java, Spring Boot, Node.js, and AI engineers directly into your existing team, usually within one to two weeks, on flexible monthly terms." },
-  { q: "Which industries does DotLabs serve?", a: "We've delivered software across 12+ industries including FinTech, healthcare, real estate, e-commerce, logistics, education, manufacturing, agriculture, travel, and pharma — each with its own compliance and workflow requirements." },
-  { q: "Can DotLabs build AI agents and LLM-powered applications?", a: "Yes. We build custom AI agents, RAG systems over your private data, AI copilots, and workflow automation using OpenAI, LangChain, and modern vector databases — with guardrails and evaluation built in." },
-  { q: "What is SaaS development and can DotLabs build a SaaS product?", a: "SaaS development means building subscription software delivered over the web — multi-tenant architecture, billing, roles, and analytics. DotLabs has shipped SaaS platforms end to end, including email outreach and automation products processing millions of events monthly." },
-  { q: "Which technologies does DotLabs specialize in?", a: "Our core stack is React, Next.js, and TypeScript on the frontend; Java, Spring Boot, Node.js, and .NET on the backend; PostgreSQL, MySQL, and MongoDB for data; AWS, Azure, and GCP for cloud; and Docker plus Kubernetes for DevOps." },
-  { q: "Is DotLabs a good choice for enterprise software development?", a: "Yes. We build enterprise systems with role-based security, audit logging, high availability, and integration with existing ERPs and CRMs — backed by documentation and SLAs that pass procurement review." },
-  { q: "Does DotLabs provide ERP and CRM development?", a: "We build custom ERP modules and CRM platforms tailored to your processes, and we also extend or integrate existing systems when a full rebuild isn't justified." },
-  { q: "How does DotLabs ensure software quality?", a: "Every merge passes peer code review and automated tests in CI. Dedicated QA engineers run functional, regression, performance, and security testing before any release reaches production." },
-  { q: "How does DotLabs keep my data and intellectual property secure?", a: "We sign NDAs before discovery, enforce least-privilege access, encrypt secrets, scan dependencies, and transfer full IP and source code ownership to you on payment. Security practices align with ISO 27001 principles." },
-  { q: "Can DotLabs work with my existing in-house development team?", a: "Absolutely. Many engagements are hybrid: your team owns the product vision while DotLabs supplies additional senior capacity, specific expertise like AI or DevOps, or an independent delivery stream." },
-  { q: "Does DotLabs offer software outsourcing for companies outside India?", a: "Yes — our client base spans the US, Europe, the Gulf, and Asia-Pacific. We maintain 4+ hours of timezone overlap, communicate in fluent English, and run all coordination in your tools." },
-  { q: "What does the software development process at DotLabs look like?", a: "Seven stages: discovery, planning, design, development, testing, deployment, and support. You get a named project lead, two-week sprints, Friday demos, and a live board showing exactly where every feature stands." },
-  { q: "Does DotLabs provide post-launch support and maintenance?", a: "Yes. We offer SLA-backed maintenance plans covering monitoring, bug fixes, security patches, performance tuning, and feature roadmap work — with 24/7 coverage available for critical systems." },
-  { q: "Can DotLabs modernize or rescue a legacy application?", a: "Yes. We audit the existing codebase, stabilize what's critical, and migrate incrementally to a modern stack — so the business keeps running while the platform improves underneath it." },
-  { q: "How do I start a project with DotLabs?", a: "Book a free consultation through our contact form. Within 48 hours you'll get a discovery call with an engineer (not a salesperson), followed by a written proposal with scope, timeline, and a fixed estimate." },
-  { q: "What engagement models does DotLabs offer?", a: "Three models: fixed-price for well-defined scopes, time-and-materials for evolving products, and dedicated teams for long-term capacity. We'll recommend the one that minimizes your risk." },
-  { q: "Does DotLabs build mobile apps for both iOS and Android?", a: "Yes. We ship native and cross-platform apps, handle App Store and Play Store submission, and design offline-first experiences where connectivity is unreliable." },
+  { q: "What is a dedicated development team and when do I need one?", a: "A dedicated development team is a group of vetted engineers who work exclusively on your product under your direction, with Sparken Technologies handling hiring, payroll, and retention. It suits companies that need to scale engineering fast without months of recruitment." },
+  { q: "Does Sparken Technologies offer staff augmentation services?", a: "Yes. We place senior React, Next.js, Java, Spring Boot, Node.js, and AI engineers directly into your existing team, usually within one to two weeks, on flexible monthly terms." },
+  { q: "Which industries does Sparken Technologies serve?", a: "We've delivered software across 12+ industries including FinTech, healthcare, real estate, e-commerce, logistics, education, manufacturing, agriculture, travel, and pharma — each with its own compliance and workflow requirements." },
+  { q: "Can Sparken Technologies build AI agents and LLM-powered applications?", a: "Yes. We build custom AI agents, RAG systems over your private data, AI copilots, and workflow automation using OpenAI, LangChain, and modern vector databases — with guardrails and evaluation built in." },
+  { q: "What is SaaS development and can Sparken Technologies build a SaaS product?", a: "SaaS development means building subscription software delivered over the web — multi-tenant architecture, billing, roles, and analytics. Sparken Technologies has shipped SaaS platforms end to end, including email outreach and automation products processing millions of events monthly." },
+  { q: "Which technologies does Sparken Technologies specialize in?", a: "Our core stack is React, Next.js, and TypeScript on the frontend; Java, Spring Boot, Node.js, and .NET on the backend; PostgreSQL, MySQL, and MongoDB for data; AWS, Azure, and GCP for cloud; and Docker plus Kubernetes for DevOps." },
+  { q: "Is Sparken Technologies a good choice for enterprise software development?", a: "Yes. We build enterprise systems with role-based security, audit logging, high availability, and integration with existing ERPs and CRMs — backed by documentation and SLAs that pass procurement review." },
+  { q: "Does Sparken Technologies provide ERP and CRM development?", a: "We build custom ERP modules and CRM platforms tailored to your processes, and we also extend or integrate existing systems when a full rebuild isn't justified." },
+  { q: "How does Sparken Technologies ensure software quality?", a: "Every merge passes peer code review and automated tests in CI. Dedicated QA engineers run functional, regression, performance, and security testing before any release reaches production." },
+  { q: "How does Sparken Technologies keep my data and intellectual property secure?", a: "We sign NDAs before discovery, enforce least-privilege access, encrypt secrets, scan dependencies, and transfer full IP and source code ownership to you on payment. Security practices align with ISO 27001 principles." },
+  { q: "Can Sparken Technologies work with my existing in-house development team?", a: "Absolutely. Many engagements are hybrid: your team owns the product vision while Sparken Technologies supplies additional senior capacity, specific expertise like AI or DevOps, or an independent delivery stream." },
+  { q: "Does Sparken Technologies offer software outsourcing for companies outside India?", a: "Yes — our client base spans the US, Europe, the Gulf, and Asia-Pacific. We maintain 4+ hours of timezone overlap, communicate in fluent English, and run all coordination in your tools." },
+  { q: "What does the software development process at Sparken Technologies look like?", a: "Seven stages: discovery, planning, design, development, testing, deployment, and support. You get a named project lead, two-week sprints, Friday demos, and a live board showing exactly where every feature stands." },
+  { q: "Does Sparken Technologies provide post-launch support and maintenance?", a: "Yes. We offer SLA-backed maintenance plans covering monitoring, bug fixes, security patches, performance tuning, and feature roadmap work — with 24/7 coverage available for critical systems." },
+  { q: "Can Sparken Technologies modernize or rescue a legacy application?", a: "Yes. We audit the existing codebase, stabilize what's critical, and migrate incrementally to a modern stack — so the business keeps running while the platform improves underneath it." },
+  { q: "How do I start a project with Sparken Technologies?", a: "Book a free consultation through our contact form. Within 48 hours you'll get a discovery call with an engineer (not a salesperson), followed by a written proposal with scope, timeline, and a fixed estimate." },
+  { q: "What engagement models does Sparken Technologies offer?", a: "Three models: fixed-price for well-defined scopes, time-and-materials for evolving products, and dedicated teams for long-term capacity. We'll recommend the one that minimizes your risk." },
+  { q: "Does Sparken Technologies build mobile apps for both iOS and Android?", a: "Yes. We ship native and cross-platform apps, handle App Store and Play Store submission, and design offline-first experiences where connectivity is unreliable." },
 ];
 
 // ─── Blog posts (full bodies render on /blog/[slug]) ─────────────────────────

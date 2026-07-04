@@ -7,7 +7,7 @@ import { buildMetadata, breadcrumbSchema } from "@/lib/seo";
 export const metadata = buildMetadata({
   title: "Industries We Serve — FinTech, Healthcare, Real Estate & More",
   description:
-    "DotLabs builds software for 10+ industries: FinTech, healthcare, real estate, e-commerce, logistics, education, manufacturing, agriculture, travel, and pharma — with domain compliance built in.",
+    "Sparken Technologies builds software for 10+ industries: FinTech, healthcare, real estate, e-commerce, logistics, education, manufacturing, agriculture, travel, and pharma — with domain compliance built in.",
   path: "/industries",
   keywords: [
     "fintech software development",

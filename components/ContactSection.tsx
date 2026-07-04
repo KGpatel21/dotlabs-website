@@ -14,9 +14,10 @@ const channels = [
 
 export default function ContactSection() {
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     if (!form.get("name") || !form.get("email") || !form.get("message")) {
@@ -24,10 +25,33 @@ export default function ContactSection() {
       return;
     }
     setError("");
-    setSent(true);
-    // TODO: wire to API/CRM — no data is sent anywhere yet.
-    // Wire this to your API route, CRM, or email service:
-    // await fetch("/api/contact", { method: "POST", body: form });
+
+    // Google Sheets capture via Apps Script Web App (see GOOGLE_SHEETS_SETUP.md).
+    const endpoint = process.env.NEXT_PUBLIC_SHEETS_WEBHOOK;
+    if (!endpoint) {
+      setError(`Form service is not configured yet. Please email us directly at ${site.email}.`);
+      return;
+    }
+
+    setSending(true);
+    try {
+      const body = new URLSearchParams();
+      body.set("source", "contact-form");
+      body.set("name", String(form.get("name") ?? ""));
+      body.set("email", String(form.get("email") ?? ""));
+      body.set("company", String(form.get("company") ?? ""));
+      body.set("budget", String(form.get("budget") ?? ""));
+      body.set("message", String(form.get("message") ?? ""));
+      body.set("page", typeof window !== "undefined" ? window.location.pathname : "");
+
+      // no-cors + URL-encoded avoids a CORS preflight; Apps Script records the row.
+      await fetch(endpoint, { method: "POST", mode: "no-cors", body });
+      setSent(true);
+    } catch {
+      setError(`Something went wrong sending your message. Please email us directly at ${site.email}.`);
+    } finally {
+      setSending(false);
+    }
   }
 
   return (
@@ -82,8 +106,8 @@ export default function ContactSection() {
                   </div>
                   {error && <p className="text-sm font-medium text-red-600 sm:col-span-2" role="alert">{error}</p>}
                   <div className="sm:col-span-2">
-                    <button type="submit" className="btn-primary w-full sm:w-auto">
-                      Send project details <Icon name="arrow" className="h-4 w-4" />
+                    <button type="submit" disabled={sending} className="btn-primary w-full disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto">
+                      {sending ? "Sending…" : <>Send project details <Icon name="arrow" className="h-4 w-4" /></>}
                     </button>
                     <p className="mt-3 text-xs text-slatex">
                       Covered by NDA on request. Your details are never shared.
@@ -111,7 +135,7 @@ export default function ContactSection() {
             <Reveal delay={0.25}>
               <div className="card overflow-hidden">
                 <iframe
-                  title="DotLabs office location on Google Maps"
+                  title="Sparken Technologies office location on Google Maps"
                   src="https://www.google.com/maps?q=Ahmedabad,Gujarat,India&output=embed"
                   className="h-56 w-full border-0"
                   loading="lazy"

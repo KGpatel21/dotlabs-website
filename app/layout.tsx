@@ -14,11 +14,11 @@ const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", displ
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "DotLabs — Custom Software Development Company | Web, Mobile, AI & SaaS",
-    template: "%s | DotLabs",
+    default: "Sparken Technologies — Custom Software Development Company | Web, Mobile, AI & SaaS",
+    template: "%s | Sparken Technologies",
   },
   description:
-    "DotLabs is a custom software development company with 50+ engineers and 300+ delivered projects. Web development, mobile apps, SaaS, AI solutions, and enterprise software for clients worldwide.",
+    "Sparken Technologies is a custom software development company with 50+ engineers and 300+ delivered projects. Web development, mobile apps, SaaS, AI solutions, and enterprise software for clients worldwide.",
   applicationName: site.name,
   authors: [{ name: site.name, url: site.url }],
   creator: site.name,

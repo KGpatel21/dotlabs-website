@@ -19,7 +19,7 @@ export function buildMetadata({
     keywords: [
       "software development company",
       "custom software development",
-      "DotLabs",
+      "Sparken Technologies",
       ...keywords,
     ],
     alternates: { canonical: url },
@@ -47,12 +47,12 @@ export const organizationSchema = {
   "@type": ["Organization", "ProfessionalService", "LocalBusiness"],
   "@id": `${site.url}/#organization`,
   name: site.name,
-  alternateName: "DotLabs Software Development Company",
+  alternateName: "Sparken Technologies Software Development Company",
   url: site.url,
   logo: `${site.url}/logo.png`,
   slogan: site.tagline,
   description:
-    "DotLabs is a software development company delivering custom software, web and mobile apps, SaaS products, AI solutions, and enterprise systems for clients worldwide.",
+    "Sparken Technologies is a software development company delivering custom software, web and mobile apps, SaaS products, AI solutions, and enterprise systems for clients worldwide.",
   email: site.email,
   telephone: site.phone,
   address: {

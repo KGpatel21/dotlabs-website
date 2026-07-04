@@ -107,3 +107,32 @@ These render and behave correctly in the browser, but **aren't connected to a ba
 - **Claims to verify before publishing**: "profiles in 48 hours", "2-week no-risk trial", "replacement within 48 hours", "160 hours/month". These are standard industry promises — make sure you can actually honour them.
 - **WhatsApp / phone** used in CTAs (`wa.me/919876543210`, etc.) are still placeholders (see contact section).
 - Engagement-model names/terms can be tuned to how you actually sell (e.g. rename "Team Extension" → "Staff Augmentation" if preferred).
+
+---
+
+# ✅ Update — Sparken Technologies go-live (this commit)
+
+**Resolved:**
+- Domain → `https://www.sparkentechnologies.com` (site config, canonicals, OG, sitemap, robots, schema)
+- Email → `info@sparkentechnologies.com`
+- Brand → "Sparken Technologies" everywhere; new spark logo, favicon (`app/icon.svg`), apple icon, `og.png`, `logo.png`
+- Contact form → Google Sheets via Apps Script webhook (see `GOOGLE_SHEETS_SETUP.md`; set `NEXT_PUBLIC_SHEETS_WEBHOOK` in Netlify)
+- Fake named team members removed → founder + discipline pods
+- Fake named testimonial authors removed → role/industry/region attribution
+
+**Still placeholder / action needed:**
+1. `NEXT_PUBLIC_SHEETS_WEBHOOK` env var in Netlify (form shows a friendly error until set)
+2. Phone + WhatsApp numbers in `lib/data.ts` (still +91 98765 43210)
+3. Social handles (LinkedIn/Twitter/GitHub/Instagram) — confirm real URLs
+4. Testimonial QUOTES are still illustrative. Replace with real client feedback (or trim the section) before heavy marketing — role-based attribution is standard, but the words should be real.
+5. Stats (50+/153+/300+/98%) — you're presenting these publicly now; be ready to stand behind them.
+6. Hire-developers rates in `lib/hire.ts` — confirm your real "from" rates.
+7. Point the domain: Netlify → Domain settings → add `sparkentechnologies.com` + `www` (Netlify will issue SSL automatically).
+
+**SEO go-live checklist:**
+1. Google Search Console → add property `sparkentechnologies.com` (domain verification via DNS TXT) → submit `https://www.sparkentechnologies.com/sitemap.xml`
+2. Bing Webmaster Tools → same (imports from GSC in one click)
+3. Create a Google Business Profile (Ahmedabad) — helps local "software company ahmedabad" searches
+4. Get listed on Clutch, GoodFirms, DesignRush — the biggest ranking + lead source for IT services companies
+5. Keep publishing to /blog — the 6 posts are indexed landing pages; add 1–2/month targeting "hire X developer" and "X development company" queries
+6. After DNS cutover, verify canonicals resolve to https://www.sparkentechnologies.com (not the netlify.app URL) so link equity consolidates
