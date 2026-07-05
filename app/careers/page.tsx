@@ -4,6 +4,7 @@ import JsonLd from "@/components/JsonLd";
 import Icon from "@/components/Icon";
 import { Reveal, SectionHeading } from "@/components/Reveal";
 import { CTABand } from "@/components/Sections2";
+import ApplyForm from "@/components/ApplyForm";
 import { buildMetadata, breadcrumbSchema } from "@/lib/seo";
 
 export const metadata = buildMetadata({
@@ -15,7 +16,7 @@ export const metadata = buildMetadata({
 });
 
 const roles = [
-  { title: "Senior Java / Spring Boot Engineer", type: "Full-time · Hybrid (Ahmedabad)", tags: ["Java 21", "Microservices", "FinTech"] },
+  { title: "Senior Backend Engineer (Java / Node)", type: "Full-time · Hybrid (Ahmedabad)", tags: ["Java 21", "Node.js", "Microservices"] },
   { title: "Senior React / Next.js Developer", type: "Full-time · Remote (India)", tags: ["Next.js", "TypeScript", "Tailwind"] },
   { title: "AI Engineer — LLM Applications", type: "Full-time · Remote", tags: ["OpenAI", "LangChain", "RAG"] },
   { title: "Product Designer (UI/UX)", type: "Full-time · Hybrid (Ahmedabad)", tags: ["Figma", "Design systems", "B2B SaaS"] },
@@ -46,12 +47,12 @@ export default function CareersPage() {
           <SectionHeading
             eyebrow="Open roles"
             title="We're hiring across the stack"
-            desc="Don't see your exact role? Send your work anyway — we hire for trajectory, not checklists."
+            desc="Don't see your exact role? Apply below anyway — we hire for trajectory, not checklists. (Client, not a job seeker? Use the contact page instead.)"
           />
           <div className="mt-12 grid gap-4 md:grid-cols-2">
             {roles.map((r, i) => (
               <Reveal key={r.title} delay={Math.min(i * 0.05, 0.25)}>
-                <Link href="/contact" className="group block h-full">
+                <Link href="#apply" className="group block h-full">
                   <article className="card card-hover flex h-full flex-col p-6">
                     <h3 className="h-display text-lg text-ink group-hover:text-cobalt">{r.title}</h3>
                     <p className="mt-1 text-sm text-slatex">{r.type}</p>
@@ -87,6 +88,7 @@ export default function CareersPage() {
           </ul>
         </div>
       </section>
+      <ApplyForm />
       <CTABand />
     </>
   );

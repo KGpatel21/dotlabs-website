@@ -2,23 +2,27 @@ import Link from "next/link";
 import Icon from "./Icon";
 import { Reveal, SectionHeading } from "./Reveal";
 import { Highlight } from "./Motion";
-import { clients, services, industries, whyUs } from "@/lib/data";
+import { services, industries, whyUs } from "@/lib/data";
 
 export function LogoMarquee() {
-  const row = [...clients, ...clients];
+  const marks = [
+    { value: "2019", label: "Building software since — first as a freelance practice" },
+    { value: "100+", label: "Projects delivered end to end" },
+    { value: "20+", label: "Clients, from solo founders to enterprises" },
+    { value: "100%", label: "Source code & IP handed to you" },
+  ];
   return (
-    <section aria-label="Trusted by" className="border-b border-line bg-white py-10">
+    <section aria-label="Track record" className="border-b border-line bg-white py-12">
       <div className="wrap">
         <p className="text-center font-mono text-[11px] uppercase tracking-[0.22em] text-slatex">
-          Trusted by 153+ companies across 12+ industries
+          A track record built one project at a time
         </p>
-      </div>
-      <div className="marquee-row relative mt-7 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]">
-        <div className="flex w-max animate-marquee items-center gap-14 px-7">
-          {row.map((c, i) => (
-            <span key={`${c}-${i}`} className="logo-chip flex cursor-default items-center gap-2 whitespace-nowrap font-display text-base font-medium text-slatex">
-              <span className="h-1.5 w-1.5 rounded-full bg-grad-brand" /> {c}
-            </span>
+        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {marks.map((m) => (
+            <Reveal key={m.value} className="text-center">
+              <p className="h-display bg-grad-aurora-tri bg-clip-text text-3xl text-transparent sm:text-4xl">{m.value}</p>
+              <p className="mx-auto mt-2 max-w-[15rem] text-sm leading-snug text-slatex">{m.label}</p>
+            </Reveal>
           ))}
         </div>
       </div>

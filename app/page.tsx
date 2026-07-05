@@ -9,7 +9,7 @@ import { buildMetadata, faqSchema } from "@/lib/seo";
 export const metadata = buildMetadata({
   title: "Sparken Technologies — Custom Software Development Company | Web, Mobile, AI & SaaS",
   description:
-    "Sparken Technologies is a custom software development company with 50+ engineers, 153+ happy clients, and 300+ delivered projects. Web development, mobile apps, SaaS, AI agents, and enterprise software — book a free consultation.",
+    "Sparken Technologies is a software development company delivering custom software, web and mobile apps, SaaS, and AI solutions — 100+ projects for clients across 6+ industries. Book a free consultation.",
   path: "/",
   keywords: [
     "web development company",

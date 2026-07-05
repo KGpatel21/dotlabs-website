@@ -136,3 +136,23 @@ These render and behave correctly in the browser, but **aren't connected to a ba
 4. Get listed on Clutch, GoodFirms, DesignRush — the biggest ranking + lead source for IT services companies
 5. Keep publishing to /blog — the 6 posts are indexed landing pages; add 1–2/month targeting "hire X developer" and "X development company" queries
 6. After DNS cutover, verify canonicals resolve to https://www.sparkentechnologies.com (not the netlify.app URL) so link equity consolidates
+
+---
+
+# ✅ Update — Startup-honesty + forms pass (feature/startup-refinements branch)
+
+**Resolved this round:**
+- Numbers reduced everywhere: 100+ projects, 25+ team, 20+ clients, 6+ industries, 5+ countries (was 300+/50+/153+/12+/20+ countries)
+- Removed fabricated client logos + named clients; testimonials now region/industry only
+- Freelance-since-2019 → incorporated-2026 story (hero, About, milestones)
+- Team = Krutarth (Founder & Principal Architect · Architecture · Cloud · AI), Smit Desai (Head of Design), Mihir Pithva (Lead Full-Stack Engineer), all with @sparkentechnologies.com emails; photo-ready cards
+- Map removed from contact → "Based in Ahmedabad, India"
+- Contact form: inquiry-type dropdown (routes fixed-scope / dedicated / hire / small task / call / not-sure)
+- Separate careers apply form (resume LINK) → Applications tab + careers@ email
+- Newsletter → saves to Subscribers tab (was a dead button)
+- Twitter + GitHub removed from footer (LinkedIn only)
+- Spam protection: honeypot + time-trap live; Turnstile ready (add key)
+- Schedule-a-call section on contact
+- Small/local projects section on portfolio
+
+**See LAUNCH_CHECKLIST.md for the full go-live to-do list.**

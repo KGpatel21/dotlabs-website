@@ -307,7 +307,7 @@ export function Milestones() {
         <SectionHeading
           dark
           eyebrow="Our journey"
-          title="From fintech trenches to a global delivery team"
+          title="From freelance practice to a delivery team"
         />
         <ol className="relative mx-auto mt-16 max-w-3xl">
           <span className="absolute left-[11px] bottom-1 top-1 w-px bg-gradient-to-b from-cyanx via-cobalt to-transparent sm:left-[13px]" aria-hidden />

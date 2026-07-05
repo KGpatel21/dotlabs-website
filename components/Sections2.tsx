@@ -2,7 +2,7 @@ import Link from "next/link";
 import Icon from "./Icon";
 import { Reveal, SectionHeading } from "./Reveal";
 import { Highlight } from "./Motion";
-import { process, portfolio, techStack, founder, teamPods, testimonials, posts } from "@/lib/data";
+import { process, portfolio, techStack, leadership, teamPods, testimonials, posts, smallProjects } from "@/lib/data";
 
 export function ProcessTimeline() {
   return (
@@ -37,6 +37,43 @@ export function ProcessTimeline() {
   );
 }
 
+export function SmallProjects() {
+  return (
+    <section className="bg-paper py-20 lg:py-28">
+      <div className="wrap">
+        <SectionHeading
+          eyebrow="Not every project is enterprise-scale"
+          title={<>Big builds get the headlines — <Highlight>we do the smaller ones too</Highlight></>}
+          desc="A landing page, a frontend against your API, a backend service, or a stalled project that needs rescuing. No job is too small to do well."
+        />
+        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {smallProjects.map((p, i) => (
+            <Reveal key={p.title} delay={Math.min(i * 0.05, 0.25)}>
+              <div className="card card-hover flex h-full items-start gap-4 p-6">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-grad-aurora text-white">
+                  <Icon name={p.icon} className="h-5 w-5" />
+                </span>
+                <div>
+                  <h3 className="h-display text-base text-ink">{p.title}</h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-slatex">{p.desc}</p>
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+        <Reveal className="mt-10 text-center">
+          <p className="text-sm text-slatex">
+            Have something small in mind?{" "}
+            <Link href="/contact" className="font-semibold text-cobalt hover:text-violet-600">
+              Tell us about it →
+            </Link>
+          </p>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 export function PortfolioGrid({ limit }: { limit?: number }) {
   const list = limit ? portfolio.slice(0, limit) : portfolio;
   return (
@@ -45,7 +82,7 @@ export function PortfolioGrid({ limit }: { limit?: number }) {
         <SectionHeading
           eyebrow="Case studies"
           title="Proof, not promises"
-          desc="A sample of the 300+ projects we've delivered — each with a measurable business outcome."
+          desc="A sample of the work we've delivered — each with a measurable business outcome."
         />
         <div className="mt-14 grid gap-6 lg:grid-cols-2">
           {list.map((p, i) => (
@@ -131,33 +168,49 @@ const avatarGrads = [
 
 export function TeamGrid({ limit }: { limit?: number }) {
   const pods = limit ? teamPods.slice(0, limit) : teamPods;
+  const gradients = ["from-[#7C5CFF] to-[#2DD4FF]", "from-[#2E5BFF] to-[#7C5CFF]", "from-[#1FD0B0] to-[#2E5BFF]"];
   return (
     <section className="bg-paper py-20 lg:py-28">
       <div className="wrap">
         <SectionHeading
           eyebrow="The team"
-          title="A founder-led team organised around eight disciplines"
-          desc="Engineering leadership on every engagement, backed by dedicated pods for each layer of the stack."
+          title={<>Founder-led, with <Highlight>senior people on every engagement</Highlight></>}
+          desc="A small, senior core backed by dedicated pods for each layer of the stack — you always work with people who own their craft."
         />
 
-        <Reveal className="mt-14">
-          <article className="card relative overflow-hidden p-7 sm:p-9 lg:flex lg:items-center lg:gap-8">
-            <div className="absolute inset-x-0 top-0 h-1 aurora-surface" aria-hidden />
-            <span
-              className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-[#7C5CFF] to-[#2DD4FF] font-display text-2xl font-semibold text-white"
-              aria-hidden
-            >
-              {founder.initials}
-            </span>
-            <div className="mt-5 lg:mt-0">
-              <h3 className="h-display text-xl text-ink">{founder.name}</h3>
-              <p className="mt-0.5 text-sm font-medium text-cobalt">{founder.role}</p>
-              <p className="mt-1 font-mono text-[11px] uppercase tracking-wider text-slatex">{founder.area}</p>
-              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slatex">{founder.bio}</p>
-            </div>
-          </article>
-        </Reveal>
+        {/* Leadership — real named people, photo-ready */}
+        <div className="mt-14 grid gap-5 md:grid-cols-3">
+          {leadership.map((m, i) => (
+            <Reveal key={m.name} delay={Math.min(i * 0.08, 0.24)}>
+              <article className="card card-hover group/lead relative h-full overflow-hidden p-7 text-center">
+                <div className="absolute inset-x-0 top-0 h-1 aurora-surface opacity-0 transition-opacity duration-300 group-hover/lead:opacity-100" aria-hidden />
+                {/* To use a real photo later: replace this avatar block with
+                    <img src="/team/xxx.jpg" alt={m.name} className="mx-auto h-24 w-24 rounded-2xl object-cover" /> */}
+                <span
+                  className={`mx-auto flex h-24 w-24 items-center justify-center rounded-2xl bg-gradient-to-br ${gradients[i % gradients.length]} font-display text-3xl font-semibold text-white transition-transform duration-300 group-hover/lead:scale-105`}
+                  aria-hidden
+                >
+                  {m.initials}
+                </span>
+                <h3 className="h-display mt-5 text-lg text-ink">{m.name}</h3>
+                <p className="mt-1 text-sm font-semibold text-cobalt">{m.role}</p>
+                <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.18em] text-violet-600">{m.area}</p>
+                <p className="mt-4 text-sm leading-relaxed text-slatex">{m.bio}</p>
+                <a
+                  href={`mailto:${m.email}`}
+                  className="mt-5 inline-flex items-center gap-1.5 text-xs font-semibold text-slatex transition-colors hover:text-cobalt"
+                >
+                  <Icon name="mail" className="h-3.5 w-3.5" /> {m.email}
+                </a>
+              </article>
+            </Reveal>
+          ))}
+        </div>
 
+        {/* Discipline pods */}
+        <Reveal className="mt-16 text-center">
+          <h3 className="font-mono text-[11px] uppercase tracking-[0.22em] text-slatex">Backed by dedicated pods</h3>
+        </Reveal>
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {pods.map((p, i) => (
             <Reveal key={p.discipline} delay={Math.min(i * 0.04, 0.28)}>
@@ -185,7 +238,7 @@ export function Testimonials({ limit }: { limit?: number }) {
         <SectionHeading
           eyebrow="Client outcomes"
           title={<>What clients say <Highlight>when the project is over</Highlight></>}
-          desc="98% satisfaction isn't a vanity metric — it's renewals, referrals, and second projects."
+          desc="Client trust isn't a vanity metric — it's renewals, referrals, and second projects."
         />
         <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {list.map((t, i) => (

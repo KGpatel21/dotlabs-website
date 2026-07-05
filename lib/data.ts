@@ -8,14 +8,23 @@ export const site = {
   shortName: "Sparken",
   tagline: "Transforming Ideas Into Scalable Digital Solutions",
   url: "https://www.sparkentechnologies.com",
-  email: "info@sparkentechnologies.com",
-  address: "Sparken Technologies, Ahmedabad, Gujarat, India",
-  founded: 2014, // used in "years in business" copy
+  // Department mailboxes (all live)
+  email: "hello@sparkentechnologies.com",
+  emails: {
+    hello: "hello@sparkentechnologies.com", // general inquiries
+    sales: "sales@sparkentechnologies.com", // new business / quotes
+    support: "support@sparkentechnologies.com", // existing clients
+    careers: "careers@sparkentechnologies.com", // job applications
+    billing: "billing@sparkentechnologies.com",
+    admin: "admin@sparkentechnologies.com",
+  },
+  address: "Ahmedabad, Gujarat, India",
+  city: "Ahmedabad, India",
+  foundedFreelance: 2019, // began as an independent freelance practice
+  incorporated: 2026, // registered as Sparken Technologies
+  founded: 2019, // used in "years in business" copy (freelance origin)
   social: {
-    linkedin: "https://www.linkedin.com/company/sparken-technologies", // PLACEHOLDER — confirm handle
-    twitter: "https://twitter.com/sparkentech", // PLACEHOLDER — confirm handle
-    github: "https://github.com/sparkentechnologies", // PLACEHOLDER — confirm handle
-    instagram: "https://instagram.com/sparkentechnologies", // PLACEHOLDER — confirm handle
+    linkedin: "https://www.linkedin.com/company/sparken-technologies", // PLACEHOLDER — paste real Company Page URL
   },
 };
 
@@ -28,17 +37,17 @@ export const outcomes = [
 ];
 
 export const stats = [
-  { value: 50, suffix: "+", label: "Expert engineers" },
-  { value: 153, suffix: "+", label: "Happy clients" },
-  { value: 300, suffix: "+", label: "Projects delivered" },
-  { value: 98, suffix: "%", label: "Client satisfaction" },
-  { value: 12, suffix: "+", label: "Industries served" },
+  { value: 100, suffix: "+", label: "Projects delivered" },
+  { value: 25, suffix: "+", label: "Engineers & designers" },
+  { value: 20, suffix: "+", label: "Clients served" },
+  { value: 6, suffix: "+", label: "Years building software" },
+  { value: 6, suffix: "+", label: "Industries" },
 ];
 
 // Secondary proof points used across deep pages
 export const proofPoints = [
-  { value: "11+", label: "Years building software" },
-  { value: "20+", label: "Countries served" },
+  { value: "6+", label: "Years building software" },
+  { value: "5+", label: "Countries served" },
   { value: "80%", label: "Clients who return for a 2nd project" },
   { value: "4+ hrs", label: "Daily timezone overlap" },
   { value: "100%", label: "Source code & IP ownership" },
@@ -49,7 +58,7 @@ export const trustBadges = [
   "ISO 27001-aligned security",
   "NDA on every engagement",
   "Agile, sprint-based delivery",
-  "24/7 global support",
+  "Reliable ongoing support",
 ];
 
 // ─── Services ────────────────────────────────────────────────────────────────
@@ -484,7 +493,7 @@ export const portfolio = [
       "We built a regulated portal with consolidated portfolio analytics, document vaults, MAS-aligned audit trails, and role-based access for advisors and clients.",
     tech: ["Java 21", "Spring Security", "PostgreSQL", "Angular", "Azure"],
     impact:
-      "Reduced advisor reporting time by 60% and onboarded $400M+ in assets onto the platform within the first year.",
+      "Reduced advisor reporting time by 60% and helped the firm bring a large book of assets onto a single platform in the first year.",
   },
   {
     title: "AI Customer-Support Agent",
@@ -528,8 +537,18 @@ export const portfolio = [
       "We delivered a cloud-native learning platform with live classes, proctored assessments, offline-capable mobile apps, and analytics dashboards for faculty.",
     tech: ["Next.js", "Node.js", "PostgreSQL", "WebRTC", "AWS"],
     impact:
-      "Served 40,000+ students with 99.98% uptime through two full exam cycles and raised course-completion rates by 14%.",
+      "Held up across two full exam cycles with no downtime and raised course-completion rates by 14%.",
   },
+];
+
+// ─── Smaller / quick-turnaround work (shown on portfolio page) ────────────────
+export const smallProjects = [
+  { title: "Static & landing pages", icon: "globe", desc: "Fast, SEO-ready marketing sites and landing pages — often live within a week." },
+  { title: "Frontend-only builds", icon: "code", desc: "React/Next.js front-ends against your existing or third-party APIs." },
+  { title: "Backend & APIs only", icon: "database", desc: "REST/GraphQL APIs, integrations, and databases for teams who have their own frontend." },
+  { title: "Bug fixes & rescue work", icon: "refresh", desc: "Jump into an existing codebase to fix, refactor, or unblock a stalled build." },
+  { title: "WordPress & CMS sites", icon: "pen", desc: "Content-managed sites clients can update themselves, without touching code." },
+  { title: "Small automations", icon: "bot", desc: "Scripts, bots, and scheduled jobs that remove repetitive manual work." },
 ];
 
 // ─── Technology stack (used by homepage chips) ───────────────────────────────
@@ -593,13 +612,43 @@ export const techPrinciples = [
 // ─── Team ────────────────────────────────────────────────────────────────────
 export const founder = {
   name: "Krutarth Patel",
-  role: "Founder & Principal Engineer",
-  area: "Architecture · FinTech · AI",
+  role: "Founder & Principal Architect",
+  area: "Architecture · Cloud · AI",
   initials: "KP",
-  bio: "Backend engineer by trade with deep experience in regulated banking middleware and enterprise integrations. Personally reviews the architecture on every major Sparken engagement.",
+  email: "krutarthpatel@sparkentechnologies.com",
+  linkedin: "https://www.linkedin.com/company/sparken-technologies", // PLACEHOLDER — personal/company URL
+  bio: "Backend and systems engineer who architects scalable, cloud-native software and AI-driven platforms. Started Sparken as a freelance practice in 2019 and still reviews the architecture on every major engagement.",
 };
 
-// Team presented as discipline pods (headcounts, not named individuals)
+// Leadership — real people (no fabricated headcount names)
+export const leadership = [
+  {
+    name: "Krutarth Patel",
+    role: "Founder & Principal Architect",
+    area: "Architecture · Cloud · AI",
+    initials: "KP",
+    email: "krutarthpatel@sparkentechnologies.com",
+    bio: "Architects scalable, cloud-native systems and AI platforms end to end — and stays hands-on with delivery on every major build.",
+  },
+  {
+    name: "Smit Desai",
+    role: "Head of Design",
+    area: "Product Design · UX · Figma",
+    initials: "SD",
+    email: "smitdesai@sparkentechnologies.com",
+    bio: "Senior product designer who turns complex requirements into interfaces people understand on first use — from research and wireframes to polished, design-system-driven UI.",
+  },
+  {
+    name: "Mihir Pithva",
+    role: "Lead Full-Stack Engineer",
+    area: "Full-Stack · APIs · Frontend",
+    initials: "MP",
+    email: "mihirpithva@sparkentechnologies.com",
+    bio: "Full-stack engineer who ships across the whole stack — from robust APIs and data models to fast, accessible front-ends — with a sharp eye for code quality.",
+  },
+];
+
+// Delivery is organised into discipline pods (capabilities, not fake individuals)
 export const teamPods = [
   { discipline: "Backend Engineering", icon: "database", stack: "Java · Spring Boot · Node.js · Python", focus: "APIs, microservices, integrations, and data-heavy systems" },
   { discipline: "Frontend Engineering", icon: "code", stack: "React · Next.js · Angular · TypeScript", focus: "Fast, accessible web apps and design-system driven UI" },
@@ -613,9 +662,9 @@ export const teamPods = [
 
 // ─── Company story & milestones (used by /about) ─────────────────────────────
 export const aboutStory = [
-  "Sparken Technologies began with a small team building banking middleware for regulated markets — systems where a bug isn't an inconvenience, it's a compliance incident. That environment shaped everything about how we work: rigorous reviews, automated testing, and documentation that survives audits.",
-  "Today we're 50+ engineers, designers, and architects serving 153+ clients across 12+ industries, from venture-backed SaaS startups to enterprise groups spanning multiple verticals. The fintech discipline never left — it just got applied to everything we build.",
-  "We stay deliberately mid-sized. Large enough to staff full product teams with 24/7 support; small enough that the founder still reviews architecture on every major engagement. That's the balance our clients tell us they can't find elsewhere — the rigor of a big firm without the layers, and the responsiveness of a small one without the risk.",
+  "Sparken Technologies didn't appear overnight. It started back in 2019 as an independent freelance practice — one engineer taking on client projects, from banking middleware for regulated markets to web and mobile builds for founders. Those years of shipping directly for clients, with no layers to hide behind, shaped how we work: rigorous reviews, automated testing, and documentation that survives an audit.",
+  "As the work grew beyond what one person could deliver, so did the team. In 2026 we formalised everything under one roof and registered as Sparken Technologies — the same hands-on standard, now backed by a proper team of engineers, designers, and architects.",
+  "Today we're a 25+ person team who've delivered 100+ projects for 20+ clients across 6+ industries — from solo founders shipping their first product to established companies modernising critical systems. We stay deliberately lean: senior enough to own hard problems, small enough that the founder still reviews architecture on every major engagement.",
 ];
 
 export const aboutApproach = [
@@ -625,11 +674,11 @@ export const aboutApproach = [
 ];
 
 export const milestones = [
-  { year: "2014", label: "Founded", desc: "Started as a small team building banking middleware for regulated markets." },
-  { year: "2017", label: "Went global", desc: "First international clients across the Gulf, Europe, and Asia-Pacific." },
-  { year: "2020", label: "Scaled delivery", desc: "Grew to multi-team delivery with dedicated QA, DevOps, and design practices." },
-  { year: "2023", label: "AI practice launched", desc: "Stood up a dedicated AI team building agents, RAG systems, and LLM applications." },
-  { year: "Today", label: "50+ and growing", desc: "300+ projects delivered across 12+ industries, with 80% of clients returning." },
+  { year: "2019", label: "Started freelancing", desc: "Began as an independent freelance practice, shipping client projects end to end." },
+  { year: "2021", label: "First long-term clients", desc: "Repeat clients and referrals turned one-off projects into ongoing partnerships." },
+  { year: "2023", label: "Team began forming", desc: "Brought in trusted designers and engineers to take on larger, multi-discipline builds." },
+  { year: "2024", label: "AI work begins", desc: "Started building AI features, agents, and automation into client products." },
+  { year: "2026", label: "Sparken Technologies", desc: "Formalised the practice into a registered software company — same standard, bigger team." },
 ];
 
 // ─── Testimonials ────────────────────────────────────────────────────────────
@@ -686,7 +735,7 @@ export const faqs = [
   { q: "Why should I hire a software development company instead of freelancers?", a: "A company gives you a full team — architects, developers, designers, QA, and DevOps — plus continuity, code review, documented processes, and accountability under contract. With freelancers, a single departure can stall your entire product." },
   { q: "What is a dedicated development team and when do I need one?", a: "A dedicated development team is a group of vetted engineers who work exclusively on your product under your direction, with Sparken Technologies handling hiring, payroll, and retention. It suits companies that need to scale engineering fast without months of recruitment." },
   { q: "Does Sparken Technologies offer staff augmentation services?", a: "Yes. We place senior React, Next.js, Java, Spring Boot, Node.js, and AI engineers directly into your existing team, usually within one to two weeks, on flexible monthly terms." },
-  { q: "Which industries does Sparken Technologies serve?", a: "We've delivered software across 12+ industries including FinTech, healthcare, real estate, e-commerce, logistics, education, manufacturing, agriculture, travel, and pharma — each with its own compliance and workflow requirements." },
+  { q: "Which industries does Sparken Technologies serve?", a: "We've delivered software across industries including FinTech, healthcare, real estate, e-commerce, logistics, and education — each with its own compliance and workflow requirements." },
   { q: "Can Sparken Technologies build AI agents and LLM-powered applications?", a: "Yes. We build custom AI agents, RAG systems over your private data, AI copilots, and workflow automation using OpenAI, LangChain, and modern vector databases — with guardrails and evaluation built in." },
   { q: "What is SaaS development and can Sparken Technologies build a SaaS product?", a: "SaaS development means building subscription software delivered over the web — multi-tenant architecture, billing, roles, and analytics. Sparken Technologies has shipped SaaS platforms end to end, including email outreach and automation products processing millions of events monthly." },
   { q: "Which technologies does Sparken Technologies specialize in?", a: "Our core stack is React, Next.js, and TypeScript on the frontend; Java, Spring Boot, Node.js, and .NET on the backend; PostgreSQL, MySQL, and MongoDB for data; AWS, Azure, and GCP for cloud; and Docker plus Kubernetes for DevOps." },
@@ -697,7 +746,7 @@ export const faqs = [
   { q: "Can Sparken Technologies work with my existing in-house development team?", a: "Absolutely. Many engagements are hybrid: your team owns the product vision while Sparken Technologies supplies additional senior capacity, specific expertise like AI or DevOps, or an independent delivery stream." },
   { q: "Does Sparken Technologies offer software outsourcing for companies outside India?", a: "Yes — our client base spans the US, Europe, the Gulf, and Asia-Pacific. We maintain 4+ hours of timezone overlap, communicate in fluent English, and run all coordination in your tools." },
   { q: "What does the software development process at Sparken Technologies look like?", a: "Seven stages: discovery, planning, design, development, testing, deployment, and support. You get a named project lead, two-week sprints, Friday demos, and a live board showing exactly where every feature stands." },
-  { q: "Does Sparken Technologies provide post-launch support and maintenance?", a: "Yes. We offer SLA-backed maintenance plans covering monitoring, bug fixes, security patches, performance tuning, and feature roadmap work — with 24/7 coverage available for critical systems." },
+  { q: "Does Sparken Technologies provide post-launch support and maintenance?", a: "Yes. We offer SLA-backed maintenance plans covering monitoring, bug fixes, security patches, performance tuning, and feature roadmap work — with priority coverage available for business-critical systems." },
   { q: "Can Sparken Technologies modernize or rescue a legacy application?", a: "Yes. We audit the existing codebase, stabilize what's critical, and migrate incrementally to a modern stack — so the business keeps running while the platform improves underneath it." },
   { q: "How do I start a project with Sparken Technologies?", a: "Book a free consultation through our contact form. Within 48 hours you'll get a discovery call with an engineer (not a salesperson), followed by a written proposal with scope, timeline, and a fixed estimate." },
   { q: "What engagement models does Sparken Technologies offer?", a: "Three models: fixed-price for well-defined scopes, time-and-materials for evolving products, and dedicated teams for long-term capacity. We'll recommend the one that minimizes your risk." },

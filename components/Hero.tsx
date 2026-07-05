@@ -114,15 +114,15 @@ export default function Hero() {
           transition={{ duration: 0.7, ease: [0.21, 0.6, 0.35, 1] }}
           className="max-w-3xl lg:max-w-2xl"
         >
-          <p className="eyebrow-dark">AI-driven software development company</p>
+          <p className="eyebrow-dark">Independent since 2019 · Now Sparken Technologies</p>
           <h1 className="h-display mt-5 text-4xl leading-[1.08] sm:text-5xl lg:text-[3.6rem]">
             Transforming ideas into{" "}
             <span className="bg-grad-aurora-tri bg-clip-text text-transparent">scalable digital solutions</span>
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-mist sm:text-lg">
             Sparken Technologies designs and engineers custom software, web and mobile apps, SaaS platforms, and
-            AI solutions for ambitious companies. 50+ senior engineers. 300+ projects shipped.
-            One accountable partner from first call to long-term support.
+            AI solutions for ambitious companies. A 25+ person team, 100+ projects shipped,
+            and one accountable partner from first call to long-term support.
           </p>
 
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">

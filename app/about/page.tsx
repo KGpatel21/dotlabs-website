@@ -11,7 +11,7 @@ import { aboutStory } from "@/lib/data";
 export const metadata = buildMetadata({
   title: "About Sparken Technologies — A Founder-Led Software Development Company",
   description:
-    "Meet Sparken Technologies: a founder-led software development company delivering web, mobile, SaaS, AI, and enterprise systems for clients across four continents. Learn how we work and why clients stay.",
+    "Meet Sparken Technologies: a founder-led software development company delivering web, mobile, SaaS, AI, and enterprise systems for clients across multiple countries. Learn how we work and why clients stay.",
   path: "/about",
   keywords: ["about Sparken Technologies", "software development team", "software consulting services"],
 });
@@ -30,7 +30,7 @@ const values = [
   {
     n: "03",
     title: "Craft over volume",
-    desc: "We'd rather ship fewer projects exceptionally than many projects adequately. Our 98% satisfaction rate is the result.",
+    desc: "We'd rather ship fewer projects exceptionally than many projects adequately. Repeat clients are the result.",
   },
   {
     n: "04",
@@ -68,7 +68,7 @@ export default function AboutPage() {
           <Reveal>
             <p className="eyebrow">Our story</p>
             <h2 className="h-display mt-3 text-3xl text-ink sm:text-4xl">
-              From fintech trenches to a global delivery team
+              From freelance practice to a delivery team
             </h2>
             <div className="mt-8 grid gap-4">
               {missionVision.map((m) => (

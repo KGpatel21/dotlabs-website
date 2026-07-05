@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     template: "%s | Sparken Technologies",
   },
   description:
-    "Sparken Technologies is a custom software development company with 50+ engineers and 300+ delivered projects. Web development, mobile apps, SaaS, AI solutions, and enterprise software for clients worldwide.",
+    "Sparken Technologies is a software development company delivering custom software, web and mobile apps, SaaS, and AI solutions. 100+ projects delivered for clients across multiple industries.",
   applicationName: site.name,
   authors: [{ name: site.name, url: site.url }],
   creator: site.name,
