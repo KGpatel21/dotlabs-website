@@ -15,12 +15,12 @@ const channels = [
 ];
 
 const inquiryTypes = [
-  "Fixed-scope project (I have defined requirements)",
+  "Fixed-scope project",
   "Ongoing / dedicated team",
   "Hire a specific developer",
-  "Small task (landing page, bug fix, API)",
+  "Small task (site, fix, API)",
   "Schedule a call",
-  "Not sure yet — need advice",
+  "Not sure yet",
 ];
 
 export default function ContactSection({ defaultInquiry }: { defaultInquiry?: string }) {

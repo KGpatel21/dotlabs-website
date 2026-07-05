@@ -15,6 +15,24 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Mobile safety: never allow the page to grow wider than the viewport.
+   `clip` (unlike hidden) doesn't create a new scroll container. */
+html,
+body {
+  overflow-x: clip;
+  max-width: 100%;
+}
+
+/* Form controls: a <select>'s intrinsic min-width equals its longest option,
+   which blows out CSS grids on small screens. Neutralise that. */
+input,
+select,
+textarea {
+  min-width: 0;
+  max-width: 100%;
+  width: 100%;
+}
+
 body {
   @apply bg-paper text-ink font-body antialiased;
   text-rendering: optimizeLegibility;
@@ -27,7 +45,7 @@ body {
 
 @layer components {
   .wrap {
-    @apply mx-auto w-full max-w-wrap px-5 sm:px-8;
+    @apply mx-auto w-full max-w-wrap px-4 sm:px-6 lg:px-8;
   }
   .eyebrow {
     @apply font-mono text-[11px] sm:text-xs uppercase tracking-[0.22em] text-cobalt flex items-center gap-2;

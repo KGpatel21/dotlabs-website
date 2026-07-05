@@ -198,7 +198,7 @@ export function TeamGrid({ limit }: { limit?: number }) {
                 <p className="mt-4 text-sm leading-relaxed text-slatex">{m.bio}</p>
                 <a
                   href={`mailto:${m.email}`}
-                  className="mt-5 inline-flex items-center gap-1.5 text-xs font-semibold text-slatex transition-colors hover:text-cobalt"
+                  className="mt-5 inline-flex max-w-full items-center gap-1.5 break-all text-xs font-semibold text-slatex transition-colors hover:text-cobalt"
                 >
                   <Icon name="mail" className="h-3.5 w-3.5" /> {m.email}
                 </a>

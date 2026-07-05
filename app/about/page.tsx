@@ -59,7 +59,13 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About Sparken Technologies"
         title="A software company built the way we wished vendors behaved"
-        desc="Sparken Technologies was founded by engineers who spent years inside enterprise delivery — and saw how much gets lost between sales decks and shipped software. We built the company that closes that gap."
+        desc="Started as one engineer freelancing in 2019. Incorporated in 2026. Same standard the whole way: honest estimates, senior work, and software that holds up in production."
+        chips={[
+          { value: "2019", label: "Started freelancing" },
+          { value: "2026", label: "Incorporated" },
+          { value: "25+", label: "Team" },
+          { value: "100+", label: "Projects" },
+        ]}
       />
 
       {/* Story — white */}
