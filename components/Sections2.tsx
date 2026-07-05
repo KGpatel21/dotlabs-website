@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Icon from "./Icon";
 import { Reveal, SectionHeading } from "./Reveal";
+import { Highlight } from "./Motion";
 import { process, portfolio, techStack, founder, teamPods, testimonials, posts } from "@/lib/data";
 
 export function ProcessTimeline() {
@@ -183,7 +184,7 @@ export function Testimonials({ limit }: { limit?: number }) {
       <div className="wrap">
         <SectionHeading
           eyebrow="Client outcomes"
-          title="What clients say when the project is over"
+          title={<>What clients say <Highlight>when the project is over</Highlight></>}
           desc="98% satisfaction isn't a vanity metric — it's renewals, referrals, and second projects."
         />
         <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -317,9 +318,9 @@ export function CTABand() {
             <Link href="/contact" className="btn-on-color">
               Book a free consultation <Icon name="arrow" className="h-4 w-4" />
             </Link>
-            <a href="https://wa.me/919876543210" className="btn-ghost border-white/40 text-white hover:border-white hover:bg-white/10 hover:text-white">
-              Chat on WhatsApp
-            </a>
+            <Link href="/portfolio" className="btn-ghost border-white/40 text-white hover:border-white hover:bg-white/10 hover:text-white">
+              See our work first
+            </Link>
           </div>
         </Reveal>
       </div>

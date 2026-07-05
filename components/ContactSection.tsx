@@ -7,8 +7,7 @@ import { site } from "@/lib/data";
 
 const channels = [
   { icon: "mail", label: "Email us", value: site.email, href: `mailto:${site.email}` },
-  { icon: "phone", label: "Call us", value: site.phone, href: `tel:${site.phone.replace(/\s/g, "")}` },
-  { icon: "smartphone", label: "WhatsApp", value: "Chat instantly", href: site.whatsapp },
+  { icon: "users", label: "LinkedIn", value: "Connect with us", href: site.social.linkedin },
   { icon: "pin", label: "Visit us", value: "Ahmedabad, Gujarat, India", href: "https://maps.google.com/?q=Ahmedabad" },
 ];
 

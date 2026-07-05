@@ -1,0 +1,233 @@
+════════════════════════════════════════════════════════════════════════════
+SPARKEN TECHNOLOGIES — IMAGE GENERATION PROMPTS (for Google Gemini)
+════════════════════════════════════════════════════════════════════════════
+
+HOW TO USE
+1. Copy the STYLE BLOCK below and paste it at the END of every prompt.
+   This keeps all images looking like one consistent brand family.
+2. Generate at the largest size Gemini offers, then download the original
+   (not the preview). Target at least 2560px on the long edge; upscale to
+   4K with Gemini's upscale option or any HD upscaler before uploading.
+3. Save as WebP (or high-quality JPG) before adding to the site — smaller
+   files, same quality.
+4. IMPORTANT: The prompts say "no text, no words, no logos". AI-generated
+   text always looks broken — headlines belong in HTML, not in the image.
+
+────────────────────────────────────────────────────────────────────────────
+STYLE BLOCK — append to every prompt
+────────────────────────────────────────────────────────────────────────────
+Style: premium enterprise technology aesthetic. Color palette strictly:
+deep navy blue-black (#070C1A) backgrounds, electric cobalt blue (#2E5BFF),
+vivid violet-purple (#7C5CFF), bright cyan (#2DD4FF) as glowing accents.
+Cinematic studio lighting, soft volumetric glow, high contrast, sharp focus,
+shallow depth of field. Ultra high resolution, 4K, HDR, photorealistic
+octane render quality. Clean, minimal, uncluttered composition with
+generous negative space. Absolutely no text, no words, no letters,
+no numbers, no logos, no watermarks anywhere in the image.
+
+────────────────────────────────────────────────────────────────────────────
+A. HERO / BANNERS
+────────────────────────────────────────────────────────────────────────────
+
+[A1] HOMEPAGE HERO BACKGROUND — 16:9 (use 3840×2160)
+A vast dark futuristic digital landscape seen from a low angle: a glowing
+neural network of thin luminous lines and nodes forming the faint silhouette
+of a human brain floating above a reflective dark surface, particles of
+light drifting upward, deep navy atmosphere with violet and cyan light
+blooms on the right side, left half of the frame kept dark and empty for
+overlay content.
+
+[A2] HIRE-DEVELOPERS PAGE BANNER — 21:9 wide (use 3840×1646)
+A diverse team of professional software engineers working at sleek desks
+in a dark modern office at night, large monitors glowing with abstract
+blue and violet code visualizations (no readable text on screens), rim
+lighting in cyan, cinematic depth, subjects on the right third of frame,
+left side dark and clean for overlay text.
+
+[A3] ABOUT PAGE BANNER — 21:9 wide
+A confident founder-engineer standing in a dark modern workspace beside a
+large translucent holographic architecture diagram made of glowing blue
+and violet lines, arms crossed, warm professional expression, dramatic
+side lighting, no readable text on the hologram.
+
+[A4] CONTACT PAGE BANNER — 21:9 wide
+Close-up of two professionals shaking hands across a dark glass table, a
+soft holographic globe of glowing cyan connection lines hovering between
+them, bokeh city lights in the background, violet and blue tones.
+
+────────────────────────────────────────────────────────────────────────────
+B. PORTFOLIO CASE-STUDY COVERS — all 16:9 (use 2560×1440)
+Keep one visual formula so the portfolio grid looks uniform:
+[industry scene] + [holographic data overlay] + [brand colors]
+────────────────────────────────────────────────────────────────────────────
+
+[B1] NATIONAL HEALTH BOOKING PLATFORM (HealthTech · Germany)
+A modern hospital reception at night, a doctor viewing a floating
+holographic appointment calendar interface made of glowing cyan and blue
+panels (abstract shapes only, no readable text), clean clinical
+environment with deep navy shadows and violet accent lighting.
+
+[B2] OMNICHANNEL RETAIL REPLATFORM (E-commerce · UK)
+A premium fashion retail store at night viewed through glass, overlaid
+with translucent glowing e-commerce interface panels and a rising abstract
+sales graph in cobalt and cyan light, reflections on wet London street,
+cinematic.
+
+[B3] FLEET & LOGISTICS CONTROL TOWER (Logistics · UAE)
+A dark logistics control room overlooking a container port at dusk, a huge
+curved screen wall showing an abstract glowing map with moving route lines
+and truck position dots in blue, violet and cyan, silhouetted operators at
+consoles.
+
+[B4] WEALTH MANAGEMENT PORTAL (FinTech · Singapore)
+Singapore skyline at night seen from a high-rise office, a translucent
+holographic portfolio dashboard with abstract candlestick charts and pie
+segments floating over the glass, navy and violet palette with cyan chart
+glow, luxurious minimal mood.
+
+[B5] AI CUSTOMER-SUPPORT AGENT (SaaS · USA)
+A friendly abstract AI assistant visualized as a glowing orb of layered
+cyan and violet light rings hovering above a laptop keyboard in a dark
+office, chat bubbles as soft blank glowing shapes around it, warm rim
+light, no readable text.
+
+[B6] SMART FACTORY MONITORING SUITE (Manufacturing · Australia)
+A dark modern factory floor with robotic arms, each machine overlaid with
+a floating holographic status ring and abstract sensor waveforms in cyan
+and violet, one ring glowing amber as an anomaly alert, industrial
+cinematic lighting.
+
+[B7] INSURANCE CLAIMS AUTOMATION (InsurTech · Netherlands)
+A stack of paper documents dissolving into streams of glowing blue digital
+particles that flow into a minimalist holographic pipeline of connected
+nodes, dark navy background, violet glow, symbolizing paper-to-digital
+automation.
+
+[B8] UNIVERSITY LEARNING PLATFORM (EdTech · Canada)
+A dark modern lecture hall where students' laptops emit soft blue light,
+a large translucent holographic interface of abstract video-lesson cards
+floating at the front of the hall, cyan and violet accent glow, snowy
+campus visible through tall windows.
+
+────────────────────────────────────────────────────────────────────────────
+C. SERVICE ILLUSTRATIONS — all 1:1 square (use 2048×2048)
+For service cards. Same formula: one centered glowing 3D object on a dark
+navy background — reads as a matched icon set.
+────────────────────────────────────────────────────────────────────────────
+
+[C1] CUSTOM SOFTWARE — A floating 3D glass cube containing glowing
+interconnected blue and violet circuit pathways, centered, dark navy
+background, soft cyan under-glow.
+
+[C2] WEB DEVELOPMENT — A sleek 3D translucent browser window made of dark
+glass with glowing cobalt edge light and abstract wireframe layout blocks
+inside, floating at a slight angle, dark background.
+
+[C3] MOBILE DEVELOPMENT — A premium 3D smartphone made of dark glass
+floating upright, screen emitting layered abstract app interface panels in
+cyan and violet light, dark navy backdrop.
+
+[C4] SAAS PRODUCTS — Three stacked translucent 3D layers/planes connected
+by glowing vertical light threads, representing multi-tenant architecture,
+cobalt-violet gradient glow, centered, dark background.
+
+[C5] AI SOLUTIONS — A luminous 3D brain made of blue and violet neural
+pathways with cyan synapse sparks, floating above a dark reflective
+surface, centered.
+
+[C6] CLOUD & DEVOPS — A stylized 3D glass cloud with glowing infinity-loop
+light trail orbiting through it in cobalt and cyan, dark navy background,
+subtle particle field.
+
+────────────────────────────────────────────────────────────────────────────
+D. ABOUT / TEAM / CULTURE — 16:9 (use 2560×1440)
+────────────────────────────────────────────────────────────────────────────
+
+[D1] TEAM COLLABORATION
+A diverse team of six software engineers collaborating around a dark
+conference table lit by a large screen showing abstract blue architecture
+diagrams (no readable text), genuine engaged expressions, cinematic office
+at night, violet and cyan accent lighting.
+
+[D2] CODE REVIEW CULTURE
+Over-the-shoulder shot of two engineers pointing at a large monitor
+displaying abstract glowing code blocks (unreadable, artistic), dark
+office, cyan screen glow on their faces, professional and focused mood.
+
+[D3] OFFICE ATMOSPHERE
+A modern dark-themed software office at night: rows of clean desks with
+ultrawide monitors glowing blue and violet, plants, warm desk lamps
+mixing with cool accent light, no people, architectural photography style.
+
+[D4] MILESTONE / GROWTH ABSTRACT
+An ascending staircase of glowing translucent glass platforms rising
+through a dark space toward a bright cyan-violet light source, small
+glowing markers on each step, symbolizing company milestones.
+
+────────────────────────────────────────────────────────────────────────────
+E. INDUSTRY THUMBNAILS — 4:3 (use 2048×1536)
+One prompt pattern — swap the [SCENE] per industry:
+"[SCENE], overlaid with subtle glowing blue-violet holographic data
+elements, dark navy cinematic grade, professional photography"
+────────────────────────────────────────────────────────────────────────────
+[E1] FinTech ..... a dark trading floor with curved screens of abstract charts
+[E2] Healthcare .. a modern hospital corridor with soft blue light
+[E3] E-commerce .. a premium retail interior at night through glass
+[E4] Logistics ... a container port at dusk with crane silhouettes
+[E5] Real Estate . a modern skyscraper facade at blue hour, low angle
+[E6] Education ... a modern university library with warm lamps and laptops
+[E7] Manufacturing a robotic assembly line with precise machinery
+[E8] Aviation .... an airport terminal at night with light trails
+[E9] Legal ....... a dark modern law office with glass shelves
+[E10] SaaS ....... an abstract cluster of floating translucent app windows
+
+────────────────────────────────────────────────────────────────────────────
+F. BLOG COVER TEMPLATE — 16:9 (use 2560×1440)
+Use this pattern for any post; swap the [CONCEPT]:
+────────────────────────────────────────────────────────────────────────────
+"A minimal abstract 3D visualization of [CONCEPT], single centered glowing
+object on a dark navy background, cobalt-violet-cyan palette, generous
+empty space around the subject" + STYLE BLOCK
+
+Examples:
+[F1] AI agents ......... a small glowing orb delegating light threads to
+                          three smaller orbs
+[F2] SaaS MVP .......... a rocket made of translucent glass wireframe on a
+                          launch pad of light
+[F3] Choosing a vendor . two paths of light diverging, one ending in a
+                          glowing checkmark shape
+[F4] Code quality ...... a flawless glowing crystal among rough dark stones
+[F5] Cloud migration ... data particles flowing from an old dark server box
+                          up into a luminous glass cloud
+[F6] Dedicated teams ... five glowing humanoid silhouettes connected by
+                          light threads into one circuit
+
+────────────────────────────────────────────────────────────────────────────
+G. UTILITY
+────────────────────────────────────────────────────────────────────────────
+
+[G1] 404 PAGE — 16:9
+A lone glowing cyan orb lost in a vast dark maze of low navy walls seen
+from above, a violet light path showing the way out, minimal, atmospheric.
+
+[G2] NEWSLETTER / CTA STRIP — 21:9
+A paper plane made of glowing cyan light flying across a dark navy
+gradient, leaving a violet particle trail, extreme minimalism, lots of
+empty dark space.
+
+[G3] CAREERS — 16:9
+A young engineer at a desk at night, face lit by a monitor glowing with
+abstract blue shapes, expression of genuine focus and enjoyment, dark
+office bokeh behind, cinematic and warm despite the cool palette.
+
+────────────────────────────────────────────────────────────────────────────
+CHECKLIST BEFORE UPLOADING ANY IMAGE
+────────────────────────────────────────────────────────────────────────────
+[ ] At least 2560px wide (hero: 3840px), then upscaled to 4K if needed
+[ ] No garbled AI text anywhere (regenerate if text appears)
+[ ] Colors sit in the navy/cobalt/violet/cyan family (regenerate if it
+    drifts to teal-green, orange, or pink)
+[ ] Exported as WebP ~80-85% quality (keeps pages fast — Google ranks speed)
+[ ] Descriptive filename: sparken-case-logistics-uae.webp (helps image SEO)
+[ ] Added with meaningful alt text in the code (ask me — I'll wire them in)
+════════════════════════════════════════════════════════════════════════════

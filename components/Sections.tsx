@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Icon from "./Icon";
 import { Reveal, SectionHeading } from "./Reveal";
+import { Highlight } from "./Motion";
 import { clients, services, industries, whyUs } from "@/lib/data";
 
 export function LogoMarquee() {
@@ -12,10 +13,10 @@ export function LogoMarquee() {
           Trusted by 153+ companies across 12+ industries
         </p>
       </div>
-      <div className="relative mt-7 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]">
+      <div className="marquee-row relative mt-7 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]">
         <div className="flex w-max animate-marquee items-center gap-14 px-7">
           {row.map((c, i) => (
-            <span key={`${c}-${i}`} className="flex items-center gap-2 whitespace-nowrap font-display text-base font-medium text-slatex/70">
+            <span key={`${c}-${i}`} className="logo-chip flex cursor-default items-center gap-2 whitespace-nowrap font-display text-base font-medium text-slatex">
               <span className="h-1.5 w-1.5 rounded-full bg-grad-brand" /> {c}
             </span>
           ))}
@@ -32,7 +33,7 @@ export function ServicesGrid({ limit }: { limit?: number }) {
       <div className="wrap">
         <SectionHeading
           eyebrow="What we build"
-          title="Software development services that cover the full product lifecycle"
+          title={<>Services we build — and <Highlight>run in production</Highlight></>}
           desc="One partner for strategy, design, engineering, AI, cloud, and support — so nothing falls between vendors."
         />
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -81,7 +82,7 @@ export function IndustriesGrid() {
         <SectionHeading
           dark
           eyebrow="Industries we serve"
-          title="Domain depth, not just code"
+          title={<>Domain depth, <Highlight>not just code</Highlight></>}
           desc="Twelve-plus industries means we already speak your regulators' language, know your integrations, and skip months of onboarding."
         />
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">

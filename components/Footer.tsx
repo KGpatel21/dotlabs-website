@@ -90,9 +90,6 @@ export default function Footer() {
           <a href={`mailto:${site.email}`} className="inline-flex items-center gap-1.5 hover:text-white">
             <Icon name="mail" className="h-3.5 w-3.5" /> {site.email}
           </a>
-          <a href={`tel:${site.phone.replace(/\s/g, "")}`} className="inline-flex items-center gap-1.5 hover:text-white">
-            <Icon name="phone" className="h-3.5 w-3.5" /> {site.phone}
-          </a>
           <span className="inline-flex items-center gap-1.5">
             <Icon name="pin" className="h-3.5 w-3.5" /> Ahmedabad, India · Serving clients globally
           </span>

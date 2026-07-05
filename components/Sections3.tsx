@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Icon from "./Icon";
 import { Reveal, SectionHeading } from "./Reveal";
+import { Highlight } from "./Motion";
 import {
   services,
   industries,
@@ -99,7 +100,7 @@ export function AISpotlight() {
         <SectionHeading
           dark
           eyebrow="AI that earns its keep"
-          title="We can build almost anything with AI — the question is whether you should"
+          title={<>We can build almost anything with AI — the question is <Highlight>whether you should</Highlight></>}
           desc="From autonomous agents to RAG systems grounded in your data, we build practical AI with guardrails, evaluation, and security built in. And we'll tell you honestly where it helps and where it doesn't."
         />
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import Icon from "./Icon";
 import { trustBadges } from "@/lib/data";
-import StatCounters from "./StatCounters";
+import { outcomes } from "@/lib/data";
 import { HeroNeural } from "./Decor";
 
 function DotConstellation() {
@@ -147,9 +147,21 @@ export default function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.25, ease: [0.21, 0.6, 0.35, 1] }}
-          className="glass-dark relative mt-16 max-w-3xl px-6 py-7 sm:px-10"
+          className="relative mt-16 grid gap-3 sm:grid-cols-2 lg:max-w-4xl lg:grid-cols-4"
         >
-          <StatCounters dark compact />
+          {outcomes.map((o) => (
+            <Link
+              key={o.tag}
+              href="/portfolio"
+              className="glass-dark group/oc p-5 transition-all duration-300 hover:-translate-y-1 hover:border-violet/40 hover:bg-white/[0.07]"
+            >
+              <p className="h-display bg-grad-aurora-tri bg-clip-text text-3xl text-transparent">{o.value}</p>
+              <p className="mt-1.5 text-sm leading-snug text-white/90">{o.label}</p>
+              <p className="mt-2.5 font-mono text-[10px] uppercase tracking-[0.18em] text-mist transition-colors group-hover/oc:text-cyanx">
+                {o.tag}
+              </p>
+            </Link>
+          ))}
         </motion.div>
       </div>
     </section>

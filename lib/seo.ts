@@ -54,7 +54,6 @@ export const organizationSchema = {
   description:
     "Sparken Technologies is a software development company delivering custom software, web and mobile apps, SaaS products, AI solutions, and enterprise systems for clients worldwide.",
   email: site.email,
-  telephone: site.phone,
   address: {
     "@type": "PostalAddress",
     addressLocality: "Ahmedabad",

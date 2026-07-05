@@ -4,6 +4,7 @@ import "./globals.css";
 import { site } from "@/lib/data";
 import { organizationSchema } from "@/lib/seo";
 import Navbar from "@/components/Navbar";
+import { ScrollProgress } from "@/components/Motion";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
 
@@ -36,6 +37,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${display.variable} ${body.variable} ${mono.variable}`}>
       <body>
         <JsonLd data={organizationSchema} />
+        <ScrollProgress />
         <Navbar />
         <main id="main">{children}</main>
         <Footer />

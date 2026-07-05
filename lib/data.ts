@@ -9,8 +9,6 @@ export const site = {
   tagline: "Transforming Ideas Into Scalable Digital Solutions",
   url: "https://www.sparkentechnologies.com",
   email: "info@sparkentechnologies.com",
-  phone: "+91 98765 43210", // PLACEHOLDER — set real phone
-  whatsapp: "https://wa.me/919876543210", // PLACEHOLDER — set real WhatsApp
   address: "Sparken Technologies, Ahmedabad, Gujarat, India",
   founded: 2014, // used in "years in business" copy
   social: {
@@ -20,6 +18,14 @@ export const site = {
     instagram: "https://instagram.com/sparkentechnologies", // PLACEHOLDER — confirm handle
   },
 };
+
+// Outcome metrics surfaced in the hero — each maps to a portfolio case study
+export const outcomes = [
+  { value: "68%", label: "Claims settled with zero manual touch", tag: "InsurTech · Netherlands" },
+  { value: "5x", label: "Black Friday load, zero downtime", tag: "E-commerce · United Kingdom" },
+  { value: "96%", label: "On-time delivery, up from 81%", tag: "Logistics · UAE" },
+  { value: "47%", label: "Support tickets resolved end-to-end by AI", tag: "SaaS · United States" },
+];
 
 export const stats = [
   { value: 50, suffix: "+", label: "Expert engineers" },

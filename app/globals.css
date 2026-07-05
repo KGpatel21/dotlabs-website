@@ -45,7 +45,20 @@ body {
   }
   /* Primary CTA keeps the cobalt→cyan brand gradient */
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-full bg-grad-brand px-6 py-3 text-sm font-semibold text-white shadow-glow transition-transform duration-200 hover:scale-[1.03] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cobalt;
+    @apply relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-grad-brand px-6 py-3 text-sm font-semibold text-white shadow-glow transition-transform duration-200 hover:scale-[1.03] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cobalt;
+  }
+  /* Light sweep across primary buttons on hover */
+  .btn-primary::after {
+    content: "";
+    @apply absolute inset-y-0 -left-full w-1/2 skew-x-[-20deg] bg-white/25 transition-none;
+  }
+  .btn-primary:hover::after {
+    animation: shine 0.7s ease forwards;
+  }
+  @keyframes shine {
+    to {
+      left: 130%;
+    }
   }
   /* Solid light CTA — for use on top of the colourful aurora bands */
   .btn-on-color {
@@ -58,7 +71,25 @@ body {
     @apply rounded-2xl border border-line bg-white shadow-card transition-all duration-300;
   }
   .card-hover {
-    @apply hover:-translate-y-1.5 hover:shadow-lift hover:border-violet/40;
+    @apply relative hover:-translate-y-1.5 hover:shadow-lift hover:border-violet/40;
+  }
+  /* Aurora hairline sweeps across the top edge of hovered cards */
+  .card-hover::before {
+    content: "";
+    @apply absolute inset-x-4 top-0 h-[2px] origin-left scale-x-0 rounded-full bg-grad-aurora transition-transform duration-300;
+  }
+  .card-hover:hover::before {
+    @apply scale-x-100;
+  }
+  /* Marquee courtesy: pause on hover; logos lift from muted to full colour */
+  .marquee-row:hover .animate-marquee {
+    animation-play-state: paused;
+  }
+  .logo-chip {
+    @apply opacity-60 grayscale transition-all duration-300;
+  }
+  .logo-chip:hover {
+    @apply scale-110 opacity-100 grayscale-0;
   }
   .glass-dark {
     @apply rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-md;
