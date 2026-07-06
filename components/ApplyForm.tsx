@@ -28,8 +28,8 @@ export default function ApplyForm() {
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
-    if (!form.get("name") || !form.get("email") || !form.get("resume")) {
-      setError("Name, email, and a resume/portfolio link are required.");
+    if (!form.get("name") || !form.get("email")) {
+      setError("Name and email are required.");
       return;
     }
     setError("");
@@ -107,8 +107,8 @@ export default function ApplyForm() {
                   </select>
                 </div>
                 <div className="flex flex-col gap-1.5">
-                  <label htmlFor="resume" className="text-sm font-medium text-ink">Resume / portfolio link *</label>
-                  <input id="resume" name="resume" required className="rounded-xl border border-line bg-white px-4 py-3 text-sm focus:border-cobalt focus:outline-none" placeholder="Google Drive, LinkedIn, or GitHub URL" />
+                  <label htmlFor="resume" className="text-sm font-medium text-ink">Portfolio / resume link (optional)</label>
+                  <input id="resume" name="resume" className="rounded-xl border border-line bg-white px-4 py-3 text-sm focus:border-cobalt focus:outline-none" placeholder="Google Drive, LinkedIn, or GitHub URL" />
                 </div>
                 <div className="flex flex-col gap-1.5 sm:col-span-2">
                   <label htmlFor="message" className="text-sm font-medium text-ink">Anything you'd like us to know?</label>
@@ -128,7 +128,12 @@ export default function ApplyForm() {
                     {sending ? "Sending…" : <>Submit application <Icon name="arrow" className="h-4 w-4" /></>}
                   </button>
                   <p className="mt-3 text-xs text-slatex">
-                    Tip: make sure your link is set to “anyone with the link can view.”
+                    Sharing a link? Set it to “anyone with the link can view.” Prefer to attach a file
+                    instead? Email your resume to{" "}
+                    <a href={`mailto:${site.emails.careers}`} className="font-semibold text-cobalt">
+                      {site.emails.careers}
+                    </a>
+                    .
                   </p>
                 </div>
               </form>

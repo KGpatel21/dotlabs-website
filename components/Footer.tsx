@@ -76,7 +76,10 @@ export default function Footer() {
       </div>
 
       <div className="wrap relative flex flex-col gap-4 border-t border-white/10 py-6 text-xs sm:flex-row sm:items-center sm:justify-between">
-        <p>© {new Date().getFullYear()} Sparken Technologies. All rights reserved.</p>
+        <p>
+          © {new Date().getFullYear()} Sparken Technologies. All rights reserved. ·{" "}
+          <Link href="/privacy" className="hover:text-white">Privacy</Link>
+        </p>
         <div className="flex flex-wrap gap-x-5 gap-y-2">
           <a href={`mailto:${site.email}`} className="inline-flex items-center gap-1.5 hover:text-white">
             <Icon name="mail" className="h-3.5 w-3.5" /> {site.email}

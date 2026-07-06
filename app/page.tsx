@@ -1,7 +1,8 @@
 import Hero from "@/components/Hero";
 import ContactSection from "@/components/ContactSection";
 import JsonLd from "@/components/JsonLd";
-import { LogoMarquee, ServicesGrid, IndustriesGrid, WhyUs } from "@/components/Sections";
+import { LogoMarquee, IndustriesGrid, WhyUs } from "@/components/Sections";
+import PillarsScroll from "@/components/Pillars";
 import { AISpotlight } from "@/components/Sections3";
 import { PortfolioGrid, Testimonials, BlogPreview, CTABand, HireBand } from "@/components/Sections2";
 import { buildMetadata, faqSchema } from "@/lib/seo";
@@ -36,7 +37,7 @@ export default function HomePage() {
       <JsonLd data={faqSchema} />
       <Hero />                          {/* dark  */}
       <LogoMarquee />                   {/* white */}
-      <ServicesGrid limit={6} />        {/* paper */}
+      <PillarsScroll />                 {/* paper — scroll-pinned capabilities */}
       <HireBand />                      {/* white (aurora panel) */}
       <AISpotlight />                   {/* dark  */}
       <WhyUs />                         {/* white */}

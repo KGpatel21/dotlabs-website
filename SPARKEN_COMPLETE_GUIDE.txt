@@ -1,0 +1,257 @@
+════════════════════════════════════════════════════════════════════════════
+SPARKEN TECHNOLOGIES — COMPLETE GO-LIVE GUIDE (everything in one file)
+════════════════════════════════════════════════════════════════════════════
+Contents:
+  1. Turnstile "verify tokens" — why it still matters (your question answered)
+  2. LinkedIn Company Page — step-by-step + DP & banner Gemini prompts
+  3. Calendly — setup + how it connects to the site
+  4. Google Search Console — verify domain + submit sitemap (+ Bing in 1 click)
+  5. Google Business Profile (Ahmedabad)
+  6. Getting real testimonial quotes (copy-paste request template)
+  7. Website image prompts (exact sizes) — summary + where the full list lives
+  8. Current status & remaining checklist
+
+────────────────────────────────────────────────────────────────────────────
+1. WHY "VERIFY TOKENS IN THE APPS SCRIPT" — even though Cloudflare is on
+────────────────────────────────────────────────────────────────────────────
+Short answer: YES, still do it. 2 minutes. Here's why.
+
+The Turnstile widget on your forms only runs INSIDE the browser, on your page.
+But your Google Apps Script webhook URL is public — a spam bot doesn't have to
+visit your website at all. It can POST junk data straight to the webhook URL
+and skip the widget, the honeypot, and the time-trap entirely.
+
+  Without verification:
+    Bot ──────────────────────────────► Apps Script ► your sheet + email  ❌
+
+  With verification:
+    Bot (no valid token) ─────────────► Apps Script ► REJECTED            ✅
+    Human (widget passed, token sent) ► Apps Script ► verified ► saved    ✅
+
+The widget ISSUES a token; only your Apps Script can CHECK it (by calling
+Cloudflare with your SECRET key). That's why the secret belongs in the Apps
+Script — Vercel never verifies anything because your site is static.
+
+Do this (from SECURITY_TURNSTILE.md):
+  1. Open your sheet → Extensions → Apps Script
+  2. Paste the verifyTurnstile() function, put your SECRET key in it
+  3. Add at the top of doPost:
+       if (!verifyTurnstile(p.turnstileToken)) {
+         return ContentService.createTextOutput("blocked");
+       }
+  4. Deploy → Manage deployments → Edit (pencil) → New version
+     (NOT "New deployment" — that would change your URL)
+
+Until you do it, you're still protected from casual bots (honeypot+time-trap),
+just not from bots that target the webhook directly.
+
+────────────────────────────────────────────────────────────────────────────
+2. LINKEDIN COMPANY PAGE — full walkthrough
+────────────────────────────────────────────────────────────────────────────
+A) Create the page (5 minutes, free)
+  1. Log in to your PERSONAL LinkedIn (the one with TatvaSoft — that's fine;
+     a company page is a separate entity and never appears on your profile
+     unless you add Sparken as an experience).
+  2. Top-right: "For Business" (grid icon) → "Create a Company Page".
+  3. Choose "Company".
+  4. Fill in:
+     - Name: Sparken Technologies
+     - LinkedIn URL: linkedin.com/company/sparken-technologies
+       (if taken, try sparken-technologies-in or sparkentech — TELL ME the
+        final URL so I update the site)
+     - Website: https://www.sparkentechnologies.com
+     - Industry: IT Services and IT Consulting
+     - Company size: 11–50 employees
+     - Type: Privately Held
+  5. Tick the verification checkbox → "Create Page".
+
+B) Fill the profile (do all of it — complete pages rank higher)
+  - Tagline (120 chars):
+      "Custom software, web & mobile apps, SaaS, and AI solutions —
+       engineered end to end. Independent since 2019."
+  - About (paste, then tweak):
+      "Sparken Technologies is a software development company from Ahmedabad,
+       India. We started as an independent freelance practice in 2019 and
+       incorporated in 2026 — same standard the whole way: honest estimates,
+       senior engineering, and software that holds up in production.
+       We build custom software, web and mobile apps, SaaS platforms, and AI
+       solutions for clients across 5+ countries, and offer dedicated
+       developers on hourly and monthly models. 100+ projects delivered.
+       100% source-code and IP ownership, always. hello@sparkentechnologies.com"
+  - Location: Ahmedabad, Gujarat, India
+  - Add the 3 founders as employees (each of you adds "Sparken Technologies"
+    as a current position — Krutarth: Founder & Principal Architect;
+    Smit: Head of Design; Mihir: Lead Full-Stack Engineer).
+  - First 3 posts idea: (1) launch announcement, (2) the 2019→2026 story,
+    (3) one case study with the outcome number.
+
+C) Logo (DP) & banner — Gemini prompts
+  Sizes: Logo = square, displays at 268×268 (generate 1024×1024).
+         Banner/cover = 1128×191 (generate at 2256×382 or the largest 5.9:1
+         crop Gemini allows, then crop; keep all content in the middle 60%).
+
+  LOGO PROMPT (generate 1024×1024, 1:1):
+  "A minimalist app-icon style logo: a bold geometric lightning-bolt spark
+   glyph, gradient from violet-purple (#7C5CFF) through electric cobalt blue
+   (#2E5BFF) to bright cyan (#2DD4FF), centered on a deep navy blue-black
+   (#070C1A) rounded-square background, flat vector style, crisp edges, subtle
+   soft glow around the bolt, generous padding, no text, no letters, no
+   watermark, ultra sharp, 4K"
+   (Or better: use the site's actual /logo.png from the repo — same mark,
+    pixel-perfect. Gemini version is if you want a fancier rendition.)
+
+  BANNER PROMPT (generate widest available, crop to 1128×191):
+  "An ultra-wide dark technology banner: deep navy blue-black background
+   (#070C1A) with a subtle network of thin glowing lines and small nodes in
+   cobalt blue, violet and cyan flowing horizontally, soft violet light bloom
+   on the right third, left two-thirds kept dark and clean, minimal, premium,
+   abstract, no text, no words, no logos, ultra high resolution"
+   TIP: keep the interesting glow on the RIGHT — LinkedIn overlays your logo
+   and name on the LEFT of the cover.
+
+D) Send me the final page URL → I replace the placeholder in the site footer,
+   contact page, and organization schema.
+
+────────────────────────────────────────────────────────────────────────────
+3. CALENDLY — setup + wiring
+────────────────────────────────────────────────────────────────────────────
+  1. calendly.com → Sign up with hello@sparkentechnologies.com (Google sign-in
+     works if that mailbox is on Google Workspace).
+  2. Create ONE event type: "Free 30-min Project Consultation"
+     - Duration 30 min · Google Meet (auto-generates the meeting link)
+     - Availability: your real evening/weekend slots (be honest — you have a
+       day job; e.g. Mon–Fri 8–10 PM IST, Sat 11 AM–5 PM IST)
+     - Buffer: 15 min after events; Limit: 2–3 per day
+     - Invitee questions: "What are you building?" (long text) +
+       "Budget range" (multiple choice — mirror the site's options)
+  3. Connect your calendar (Settings → Calendar Connections) so busy slots block.
+  4. Copy the event link, e.g. calendly.com/sparken/consultation
+  5. Send it to me → I wire every "Schedule a call" button to open it
+     (currently they pre-fill the contact form as a fallback).
+
+────────────────────────────────────────────────────────────────────────────
+4. GOOGLE SEARCH CONSOLE + BING — get indexed
+────────────────────────────────────────────────────────────────────────────
+  1. search.google.com/search-console → "Add property" → choose **Domain**
+     → enter: sparkentechnologies.com
+  2. Google shows a TXT record like  google-site-verification=abc123...
+  3. Add that TXT record where your DNS lives:
+     - If your DNS is at your REGISTRAR (GoDaddy/Namecheap/etc.): DNS settings
+       → Add record → Type TXT → Host @ → Value = the string → Save.
+     - If you moved DNS to VERCEL: Vercel → Domains → sparkentechnologies.com
+       → DNS Records → Add → TXT @ → paste value.
+  4. Back in Search Console → "Verify" (may take a few minutes for DNS).
+  5. Left menu → Sitemaps → enter  sitemap.xml  → Submit.
+     (Full URL: https://www.sparkentechnologies.com/sitemap.xml)
+  6. Optional turbo: URL Inspection → paste your homepage URL → "Request
+     indexing". Repeat for /services and /hire-developers.
+  7. BING: bing.com/webmasters → Sign in → "Import from Google Search
+     Console" → one click, done. (Bing also feeds DuckDuckGo & Yahoo.)
+  Expect: indexed within days; meaningful rankings take weeks — the directory
+  listings (Clutch/GoodFirms) and blog posts accelerate it.
+
+────────────────────────────────────────────────────────────────────────────
+5. GOOGLE BUSINESS PROFILE (Ahmedabad)
+────────────────────────────────────────────────────────────────────────────
+  1. google.com/business → "Manage now" → sign in.
+  2. Business name: Sparken Technologies
+  3. Category: "Software Company" (add "Website Designer" as secondary later).
+  4. "Do you want to add a location customers can visit?" → choose NO if you
+     work remotely/from home → instead set a SERVICE AREA: Ahmedabad +
+     Gandhinagar (you can add more cities).
+  5. Contact: website https://www.sparkentechnologies.com ; phone optional
+     (you removed it from the site — you can still give Google one privately
+     for verification).
+  6. Verification: Google will offer video verification / phone / postcard —
+     follow whichever it shows (video is fastest for service businesses).
+  7. After verification: add the logo, the banner image, your services list
+     (copy from the site), and business hours.
+  8. Ask your first happy clients to leave a Google review here — local
+     reviews are rocket fuel for "software company ahmedabad" searches.
+
+────────────────────────────────────────────────────────────────────────────
+6. REAL TESTIMONIAL QUOTES — how to collect them
+────────────────────────────────────────────────────────────────────────────
+The site's attribution format is already safe (role · industry · country).
+You only need real WORDS. Send this to past freelance clients:
+
+  Subject: Quick favour — 2 lines about our work together?
+
+  Hi [name],
+  I've formalised my freelance practice into a company — Sparken Technologies
+  (sparkentechnologies.com). I'm collecting a few short client quotes for the
+  website. Would you be open to 1–2 sentences about what it was like working
+  with me on [project]? Happy to show it anonymously as
+  "[Your role], [industry], [country]" — no company name needed.
+  Either reply here or I can draft something from your feedback for you to
+  approve. Thanks!
+  — Krutarth
+
+Rules: never invent quotes; light grammar edits are fine if the client
+approves the final text. Send me each approved quote + role/industry/country
+and I'll swap them into the site.
+
+────────────────────────────────────────────────────────────────────────────
+7. WEBSITE IMAGE PROMPTS — exact sizes
+────────────────────────────────────────────────────────────────────────────
+The COMPLETE prompt list (30+ prompts with a shared style block) is in the
+repo file **IMAGE_PROMPTS.txt** — it already includes exact sizes. Summary:
+
+  Where the image goes            Generate at        Aspect
+  ─────────────────────────────  ─────────────────  ──────
+  Homepage hero background        3840×2160          16:9
+  Page banners (about/hire/etc)   3840×1646          21:9
+  Portfolio case-study covers     2560×1440          16:9   (8 prompts, B1–B8)
+  Service card illustrations      2048×2048          1:1    (6 prompts, C1–C6)
+  Team/culture photos             2560×1440          16:9
+  Industry thumbnails             2048×1536          4:3
+  Blog covers                     2560×1440          16:9
+  LinkedIn logo (this file, §2C)  1024×1024          1:1
+  LinkedIn banner (§2C)           2256×382 → crop    5.9:1
+
+Rules that matter: append the STYLE BLOCK from IMAGE_PROMPTS.txt to every
+prompt (keeps the navy/cobalt/violet/cyan family consistent); NO text inside
+images (AI text renders broken); export as WebP ~80–85%; descriptive filenames
+(sparken-case-logistics-uae.webp). Send finished images to me → I wire them in
+with proper alt text.
+
+NOTE: the current site is intentionally 100% vector (SVG) — crisp at any
+resolution with no image weight. Generated images are an optional enhancement
+for case-study covers and blog posts, not a requirement.
+
+────────────────────────────────────────────────────────────────────────────
+8. STATUS & REMAINING CHECKLIST
+────────────────────────────────────────────────────────────────────────────
+DONE BY YOU ✅
+  ✅ Domain added in Vercel (.com + www) — DNS resolving
+  ✅ Env vars set (sheets webhook + Turnstile site key) and redeployed
+  ✅ Turnstile widget live on forms
+  ✅ All department mailboxes working
+
+DONE IN CODE (this push) ✅
+  ✅ Cleaner hero: minimal copy + original "build & ship" terminal (not coorb's)
+  ✅ New display font: Archivo (wide professional grotesk)
+  ✅ Outcome metrics moved to their own band under the hero
+  ✅ Scroll-pinned "Six capabilities" section (coorb-style pinned scrolling)
+  ✅ Client world map with delivery arcs (portfolio page)
+  ✅ Cookie consent banner + /privacy page + footer link
+  ✅ Careers form: portfolio link now optional + "email resume to careers@"
+
+DO NEXT (in order)
+  1. Apps Script token verification (§1) — 2 min
+  2. LinkedIn Company Page (§2) → send me the URL
+  3. Calendly (§3) → send me the link
+  4. Search Console + sitemap (§4), Bing import
+  5. Google Business Profile (§5)
+  6. Testimonial emails (§6) → send approved quotes
+  7. Generate images (§7) when you have time → send to me
+
+WAITING ON YOU → THEN I WIRE
+  - LinkedIn URL · Calendly link · real testimonials · images
+  - Optional: real team photos (all 3, matching style)
+  - Optional: paid file-upload service if you want true resume uploads
+
+STANDING REMINDER
+  🔴 Revoke the GitHub token after today's session:
+     GitHub → Settings → Developer settings → Personal access tokens → delete.
+════════════════════════════════════════════════════════════════════════════

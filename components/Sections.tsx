@@ -2,26 +2,26 @@ import Link from "next/link";
 import Icon from "./Icon";
 import { Reveal, SectionHeading } from "./Reveal";
 import { Highlight } from "./Motion";
-import { services, industries, whyUs } from "@/lib/data";
+import { services, industries, whyUs, outcomes } from "@/lib/data";
 
 export function LogoMarquee() {
-  const marks = [
-    { value: "2019", label: "Building software since — first as a freelance practice" },
-    { value: "100+", label: "Projects delivered end to end" },
-    { value: "20+", label: "Clients, from solo founders to enterprises" },
-    { value: "100%", label: "Source code & IP handed to you" },
-  ];
   return (
-    <section aria-label="Track record" className="border-b border-line bg-white py-12">
+    <section aria-label="Outcomes" className="border-b border-line bg-white py-14">
       <div className="wrap">
         <p className="text-center font-mono text-[11px] uppercase tracking-[0.22em] text-slatex">
-          A track record built one project at a time
+          Outcomes, not just output
         </p>
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {marks.map((m) => (
-            <Reveal key={m.value} className="text-center">
-              <p className="h-display bg-grad-aurora-tri bg-clip-text text-3xl text-transparent sm:text-4xl">{m.value}</p>
-              <p className="mx-auto mt-2 max-w-[15rem] text-sm leading-snug text-slatex">{m.label}</p>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {outcomes.map((o, i) => (
+            <Reveal key={o.tag} delay={Math.min(i * 0.06, 0.2)}>
+              <Link
+                href="/portfolio"
+                className="card card-hover flex h-full flex-col p-5"
+              >
+                <p className="h-display bg-grad-aurora-tri bg-clip-text text-3xl text-transparent">{o.value}</p>
+                <p className="mt-1.5 text-sm leading-snug text-slatex">{o.label}</p>
+                <p className="mt-auto pt-3 font-mono text-[10px] uppercase tracking-[0.18em] text-mist">{o.tag}</p>
+              </Link>
             </Reveal>
           ))}
         </div>
