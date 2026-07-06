@@ -1,0 +1,222 @@
+════════════════════════════════════════════════════════════════════════════
+SPARKEN — REMAINING TASKS + YOUR QUESTIONS ANSWERED (07 Jul 2026)
+════════════════════════════════════════════════════════════════════════════
+Code status: pushed to branch **feature/polish-and-call-form** (NOT main —
+no Vercel build was triggered). Say "merge" and I'll fast-forward it to main.
+
+────────────────────────────────────────────────────────────────────────────
+Q3. LINKEDIN — "I can't set current status, I work at TatvaSoft"
+────────────────────────────────────────────────────────────────────────────
+Good news: you DON'T need to. Creating and running a Company Page does NOT
+require adding Sparken to your personal profile. You become the page ADMIN,
+which is invisible to the public and to TatvaSoft.
+
+Your options, safest first:
+  A. (Recommended now) Create the page as admin, add NOTHING to your personal
+     experience. The page works fully: posts, followers, website link.
+  B. Smit and/or Mihir add "Sparken Technologies" as their current position
+     (if their employers don't restrict it) — gives the page visible team
+     members without touching your profile.
+  C. Later — when you leave TatvaSoft or are comfortable — add "Founder,
+     Sparken Technologies" as a SECOND current position (LinkedIn allows two
+     current roles). If you do: turn OFF "Notify network" before saving, and
+     check your TatvaSoft contract's moonlighting clause first.
+
+────────────────────────────────────────────────────────────────────────────
+Q4. LINKEDIN BANNER — with company details ON it (your banner felt empty)
+────────────────────────────────────────────────────────────────────────────
+Honest warning first: AI-generated TEXT often comes out slightly warped.
+Gemini's newest models handle short text better, but check every letter.
+If any word looks off, use PLAN B below.
+
+Size: generate as WIDE as Gemini allows, crop to 1128×191 (LinkedIn company
+cover). Keep everything important inside the middle 60% horizontally and the
+RIGHT half (LinkedIn's logo + name overlay covers the LEFT on desktop).
+
+PROMPT (copy-paste):
+"A wide professional LinkedIn company banner, deep navy blue-black background
+(#070C1A) with a subtle glowing network of thin cobalt-blue, violet and cyan
+lines and nodes flowing horizontally. On the right side, clean modern white
+sans-serif text reading exactly: 'Sparken Technologies' as a bold headline,
+below it a smaller line 'Custom Software · Web & Mobile · SaaS · AI', and
+below that in small cyan text 'www.sparkentechnologies.com'. Left third of
+the banner kept dark and empty. Minimal, premium, corporate tech style,
+sharp typography, perfectly spelled text, no logos, no watermark, ultra high
+resolution 4K"
+
+PLAN B (guaranteed clean text — 5 minutes):
+  1. Generate the same banner WITHOUT any text (remove the text sentence).
+  2. Open canva.com (free) → Custom size 1128×191 → upload the image as
+     background → add the three text lines yourself (font: Archivo or
+     Poppins, white + cyan #2DD4FF) → download PNG.
+  This is what most companies actually do.
+
+────────────────────────────────────────────────────────────────────────────
+Q6. CALL SCHEDULING + SPAM-PROOF SHEET — BUILT ✅ (one action for you)
+────────────────────────────────────────────────────────────────────────────
+What I built on the branch:
+  • On the contact form, choosing "Schedule a call" now reveals:
+      - Phone / WhatsApp (REQUIRED — "used once, to confirm your slot manually")
+      - Preferred day & time
+      - Message becomes optional
+  • These submissions are sent with source = "call-request" → they land in a
+    separate **Calls** tab and email **hello@sparkentechnologies.com** with
+    subject "📞 Call request — {name} ({preferred time})".
+  • Same triple spam protection as everything else: honeypot + time-trap +
+    your Turnstile.
+  • Calendly optional: add env var NEXT_PUBLIC_CALENDLY_URL in Vercel with
+    your full event link and the "Schedule a call" card opens Calendly
+    directly. Your event is named sparken-consultation — the full link is in
+    Calendly → Event Types → Share, it looks like:
+    https://calendly.com/YOUR-USERNAME/sparken-consultation
+    (Send me that exact link OR just set the env var yourself.)
+
+YOUR one action (2 min): in your existing Google Sheet
+  1. Add a tab named exactly:  Calls
+     Headers: Timestamp | Name | Email | Phone | Preferred time | Message | Page
+  2. Apps Script: add "call-request": "hello@sparkentechnologies.com" to
+     NOTIFY + paste the call-request branch (updated GOOGLE_SHEETS_SETUP.md
+     has the exact code) → Deploy → Manage deployments → Edit → NEW VERSION.
+
+────────────────────────────────────────────────────────────────────────────
+Q7. SEARCH CONSOLE — where you are + what's next (screenshot decoded)
+────────────────────────────────────────────────────────────────────────────
+Your screenshot shows "Processing data, please check again in a day or so"
+inside the property sc-domain:sparkentechnologies.com. That means:
+
+  ✅ DNS VERIFICATION IS ALREADY DONE. You cannot see that screen otherwise.
+     (GoDaddy's connect flow added the TXT record for you.) Nothing more to
+     verify. "Processing data" just means Google has no stats yet — normal
+     for a brand-new site. Ignore it; it fills in over days.
+
+WHAT IS sitemap.xml (simple): it's a machine-readable "table of contents" of
+your website — a list of every page URL — so Google doesn't have to guess
+what to crawl. Your site generates it automatically at:
+    https://www.sparkentechnologies.com/sitemap.xml
+(Open it in your browser — you'll see the list. That file is what you submit.)
+
+DO NOW in Search Console:
+  1. Left menu → Sitemaps → in "Add a new sitemap" type:  sitemap.xml
+     → Submit. Status should become "Success".
+  2. TURBO INDEXING — left menu → URL Inspection → paste ONE url → Enter →
+     click "Request indexing". Repeat (a few per day is fine) for:
+        https://www.sparkentechnologies.com/
+        https://www.sparkentechnologies.com/services
+        https://www.sparkentechnologies.com/hire-developers
+        https://www.sparkentechnologies.com/portfolio
+        https://www.sparkentechnologies.com/about
+        https://www.sparkentechnologies.com/industries
+        https://www.sparkentechnologies.com/technologies
+        https://www.sparkentechnologies.com/contact
+        https://www.sparkentechnologies.com/careers
+        https://www.sparkentechnologies.com/blog
+
+WHAT IS BING (simple): Bing is Microsoft's search engine — the default in
+Windows / Edge, and it also powers DuckDuckGo and Yahoo search results. So
+being on Bing = being on three search engines. What to do (2 minutes):
+  1. Go to bing.com/webmasters → Sign in (Google account works)
+  2. It offers "Import from Google Search Console" → click it → approve →
+     it copies your verified site AND your sitemap automatically. Done.
+
+────────────────────────────────────────────────────────────────────────────
+Q8. GOOGLE BUSINESS PROFILE — all your sub-questions
+────────────────────────────────────────────────────────────────────────────
+a) NO PHYSICAL ADDRESS:
+   When it asks "Do you want to add a location customers can visit?" answer
+   NO. It then asks for your SERVICE AREA → enter Ahmedabad (add Gandhinagar
+   etc. if you like). Google may still privately ask for a mailing address
+   for verification — use your home address; with service-area mode it is
+   NEVER shown publicly.
+
+b) MULTIPLE BUSINESSES, ONE GMAIL:
+   Yes. One Google account can create/manage up to 100 business profiles.
+   Each profile can show its OWN public email/phone/site — the login account
+   is separate from the public contact info.
+
+c) REGISTERING SOMEONE ELSE'S BUSINESS + LATER HANDOVER:
+   Do it right from day one: after creating the profile, go to
+   Profile → three-dot menu → Business Profile settings → People and access
+   → Add → enter the OWNER's email → role "Primary owner" (or Owner).
+   Then you can stay as Manager or remove yourself. If you ever disappear
+   without doing this, the real owner can still use Google's "Request
+   ownership" flow on the listing, but it's slow — transferring up front is
+   the professional way. (Charge for the setup, hand over the keys.)
+
+d) REGISTERING A DOCTOR:
+   Yes — Google supports "individual practitioner" profiles for doctors,
+   lawyers, etc. Create it in the doctor's name (e.g. "Dr. X — Physician"),
+   category like "General practitioner" / their specialty, at their clinic
+   address. Rules: they must be a real, public-facing, practicing
+   professional at that location, and ideally the profile uses THEIR
+   identity/email as owner (see c). One practitioner profile per doctor per
+   location.
+
+e) VERIFICATION VIDEO FOR A STARTUP (no office):
+   Google wants proof the business is real and you control it. In one
+   continuous video, show:
+     • Your work area (home office is fine — desk, computer)
+     • Proof of the business: open www.sparkentechnologies.com in a browser,
+       log into hello@sparkentechnologies.com inbox, show the Vercel or
+       admin dashboard
+     • Any registration/incorporation/GST document with the business name
+     • Yourself, briefly
+   Service businesses without signage verify this way all the time.
+
+────────────────────────────────────────────────────────────────────────────
+Q9. "POINT 6 OF THE DOCUMENT" — EXPLAINED SIMPLY (real testimonials)
+────────────────────────────────────────────────────────────────────────────
+What it means, in plain words:
+
+  The testimonial CARDS on your website are safely labelled (just "CTO ·
+  Logistics · UAE" — no names). BUT the sentences inside the quotes were
+  written by me as examples. They are not things real clients said.
+
+  Before you market hard, the WORDS should be real. How:
+   1. Think of past freelance clients who were happy.
+   2. Send each one the short email template from the guide ("could you give
+      me 1–2 sentences about our work together? I'll show it anonymously").
+   3. They reply with a sentence or two. You get their OK on the final text.
+   4. Send me each approved quote + their role/industry/country.
+   5. I replace the placeholder quotes on the site.
+
+  Why bother: real words are legally safe, sound human, and clients often
+  say specific things ("delivered 2 weeks early") that sell better than
+  anything we could write.
+
+────────────────────────────────────────────────────────────────────────────
+REMAINING LIST — everything still open (the "one file" you asked for)
+────────────────────────────────────────────────────────────────────────────
+WAITING ON YOU:
+  [ ] IMAGES — generate from IMAGE_PROMPTS.txt in Gemini (hero, 8 case-study
+      covers, 6 service tiles, blog covers, industries). Send → I wire them
+      in with alt text. (You said you'll do these later — listed here so
+      it's tracked.)
+  [ ] LinkedIn banner (Q4 prompt above) — DP stays your logo ✔ per your call
+  [ ] LinkedIn Company Page URL → send me the final URL to wire into the site
+  [ ] Calendly full event link → send it OR set NEXT_PUBLIC_CALENDLY_URL in
+      Vercel yourself
+  [ ] Google Sheet: add the "Calls" tab + Apps Script branch (Q6, 2 min)
+  [ ] Apps Script Turnstile verification (guide §1) — still recommended
+  [ ] Search Console: submit sitemap.xml + request indexing for the 10 URLs (Q7)
+  [ ] Bing import (Q7)
+  [ ] Google Business Profile: finish with service-area mode + video (Q8)
+  [ ] Real testimonial quotes (Q9) → send approved ones
+  [ ] OPTIONAL: matching team photos (3), individual LinkedIn URLs for the
+      team cards, real blog posts, Clutch/GoodFirms/DesignRush listings
+
+WAITING ON ME (after you send things):
+  [ ] Wire LinkedIn URL · Calendly link · testimonials · images · team photos
+  [ ] MERGE feature/polish-and-call-form → main (only when you say "merge")
+
+DONE THIS ROUND (on the branch):
+  ✅ Pillar section numbers now visible (aurora gradient watermark)
+  ✅ Cookie banner: fluid translucent glass bar, full-width, Accept / Reject
+     / X close
+  ✅ "Schedule a call" → phone + preferred-time fields, Calls sheet tab,
+     hello@ notification, full spam protection
+  ✅ Optional Calendly hookup via env var
+  ✅ GOOGLE_SHEETS_SETUP.md updated (Calls tab + existing-deployment steps)
+
+STANDING REMINDER:
+  🔴 GitHub token — revoke after today's session.
+════════════════════════════════════════════════════════════════════════════

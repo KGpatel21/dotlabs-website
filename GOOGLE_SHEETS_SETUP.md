@@ -6,21 +6,23 @@ you. No paid service, no backend server.
 
 Forms and where they go:
 
-| Form            | source value          | Sheet tab      | Emails            |
-|-----------------|-----------------------|----------------|-------------------|
-| Contact         | `contact-form`        | Inquiries      | sales@            |
-| Careers apply   | `careers-application` | Applications   | careers@          |
-| Newsletter      | `newsletter`          | Subscribers    | hello@ (optional) |
+| Form              | source value          | Sheet tab      | Emails            |
+|-------------------|-----------------------|----------------|-------------------|
+| Contact           | `contact-form`        | Inquiries      | sales@            |
+| Schedule a call   | `call-request`        | Calls          | hello@            |
+| Careers apply     | `careers-application` | Applications   | careers@          |
+| Newsletter        | `newsletter`          | Subscribers    | hello@ (optional) |
 
 ---
 
 ## Step 1 — Create the Sheet with 3 tabs
 
 1. Go to https://sheets.google.com → new blank sheet → name it **Sparken Leads**.
-2. Create three tabs (bottom-left "+"): **Inquiries**, **Applications**, **Subscribers**.
+2. Create four tabs (bottom-left "+"): **Inquiries**, **Calls**, **Applications**, **Subscribers**.
 3. Header row for each (row 1):
 
 **Inquiries:** `Timestamp | Type | Name | Email | Company | Budget | Message | Page`
+**Calls:** `Timestamp | Name | Email | Phone | Preferred time | Message | Page`
 **Applications:** `Timestamp | Role | Name | Email | Experience | Resume Link | Message`
 **Subscribers:** `Timestamp | Email | Page`
 
@@ -32,6 +34,7 @@ In the sheet: **Extensions → Apps Script**, delete the sample, paste this, Sav
 // Where each form's notifications go:
 var NOTIFY = {
   "contact-form":        "sales@sparkentechnologies.com",
+  "call-request":        "hello@sparkentechnologies.com",
   "careers-application": "careers@sparkentechnologies.com",
   "newsletter":          "hello@sparkentechnologies.com"
 };
@@ -50,6 +53,15 @@ function doPost(e) {
       "Name: " + p.name + "\nEmail: " + p.email + "\nRole: " + p.role +
       "\nExperience: " + p.experience + "\nResume: " + p.resume +
       "\n\n" + (p.message || ""));
+
+  } else if (source === "call-request") {
+    ss.getSheetByName("Calls").appendRow([
+      now, p.name, p.email, p.phone, p.preferred, p.message, p.page
+    ]);
+    notify(source, "📞 Call request — " + (p.name || "") + " (" + (p.preferred || "any time") + ")",
+      "Name: " + p.name + "\nEmail: " + p.email + "\nPhone: " + p.phone +
+      "\nPreferred: " + p.preferred + "\n\n" + (p.message || "") +
+      "\n\nConfirm manually by phone/WhatsApp before the slot.");
 
   } else if (source === "newsletter") {
     ss.getSheetByName("Subscribers").appendRow([now, p.email, p.page]);
@@ -109,3 +121,22 @@ For local testing, create `.env.local` with the same line.
 
 Use **Deploy → Manage deployments → Edit (pencil) → New version**. Creating a
 brand-new deployment changes the URL and you'd have to update Vercel.
+
+
+---
+
+## Adding the Calls tab to an EXISTING setup (you already deployed)
+
+1. Open the sheet → add a tab named **Calls** with headers:
+   `Timestamp | Name | Email | Phone | Preferred time | Message | Page`
+2. Extensions → Apps Script → add `"call-request": "hello@sparkentechnologies.com"`
+   to NOTIFY, and paste the `call-request` branch (above) into doPost.
+3. Deploy → **Manage deployments → Edit (pencil) → New version** — NOT a new
+   deployment (that would change your URL).
+
+## Optional: Calendly instead of / alongside the form
+
+If you set the env var `NEXT_PUBLIC_CALENDLY_URL` in Vercel (your full event
+link, e.g. https://calendly.com/YOUR-SLUG/sparken-consultation), the
+"Schedule a call" side card opens Calendly directly. The in-form call request
+keeps working either way — it's your spam-protected channel with phone capture.

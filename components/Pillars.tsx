@@ -73,7 +73,7 @@ function PinnedPillars() {
                 className="card relative overflow-hidden p-9"
               >
                 <div className="absolute inset-x-0 top-0 h-1 aurora-surface" aria-hidden />
-                <span className="pointer-events-none absolute -right-4 -top-6 select-none font-display text-[7rem] font-bold leading-none text-paper">
+                <span className="pointer-events-none absolute -right-2 -top-4 select-none bg-grad-aurora bg-clip-text font-display text-[7rem] font-bold leading-none text-transparent opacity-[0.22]">
                   {String(active + 1).padStart(2, "0")}
                 </span>
                 <span className="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-grad-aurora text-white">

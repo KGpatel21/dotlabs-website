@@ -27,13 +27,21 @@ export default function ContactSection({ defaultInquiry }: { defaultInquiry?: st
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
+  const [inquiry, setInquiry] = useState(defaultInquiry ?? inquiryTypes[0]);
   const mountedAt = useRef(Date.now());
+  const isCall = inquiry === "Schedule a call";
+  const calendly = process.env.NEXT_PUBLIC_CALENDLY_URL;
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
-    if (!form.get("name") || !form.get("email") || !form.get("message")) {
+    const callMode = String(form.get("type") ?? "") === "Schedule a call";
+    if (!form.get("name") || !form.get("email") || (!callMode && !form.get("message"))) {
       setError("Name, email, and project details are required.");
+      return;
+    }
+    if (callMode && !form.get("phone")) {
+      setError("Phone number is required so we can confirm your call.");
       return;
     }
     setError("");
@@ -41,10 +49,13 @@ export default function ContactSection({ defaultInquiry }: { defaultInquiry?: st
 
     const result = await submitToSheet(
       {
-        source: "contact-form",
+        // Call requests go to their own sheet tab + notification
+        source: callMode ? "call-request" : "contact-form",
         type: String(form.get("type") ?? ""),
         name: String(form.get("name") ?? ""),
         email: String(form.get("email") ?? ""),
+        phone: String(form.get("phone") ?? ""),
+        preferred: String(form.get("preferred") ?? ""),
         company: String(form.get("company") ?? ""),
         budget: String(form.get("budget") ?? ""),
         message: String(form.get("message") ?? ""),
@@ -94,12 +105,25 @@ export default function ContactSection({ defaultInquiry }: { defaultInquiry?: st
                 <form onSubmit={handleSubmit} noValidate className="grid gap-5 sm:grid-cols-2">
                   <div className="flex flex-col gap-1.5 sm:col-span-2">
                     <label htmlFor="type" className="text-sm font-medium text-ink">How can we help? *</label>
-                    <select id="type" name="type" defaultValue={defaultInquiry} className="rounded-xl border border-line bg-white px-4 py-3 text-sm focus:border-cobalt focus:outline-none">
+                    <select id="type" name="type" value={inquiry} onChange={(e) => setInquiry(e.target.value)} className="rounded-xl border border-line bg-white px-4 py-3 text-sm focus:border-cobalt focus:outline-none">
                       {inquiryTypes.map((t) => (
                         <option key={t}>{t}</option>
                       ))}
                     </select>
                   </div>
+                  {isCall && (
+                    <>
+                      <div className="flex flex-col gap-1.5">
+                        <label htmlFor="phone" className="text-sm font-medium text-ink">Phone / WhatsApp *</label>
+                        <input id="phone" name="phone" type="tel" required={isCall} autoComplete="tel" className="rounded-xl border border-line bg-white px-4 py-3 text-sm focus:border-cobalt focus:outline-none" placeholder="+91 …" />
+                        <span className="text-xs text-slatex">Used once, to confirm your slot manually.</span>
+                      </div>
+                      <div className="flex flex-col gap-1.5">
+                        <label htmlFor="preferred" className="text-sm font-medium text-ink">Preferred day &amp; time</label>
+                        <input id="preferred" name="preferred" className="rounded-xl border border-line bg-white px-4 py-3 text-sm focus:border-cobalt focus:outline-none" placeholder="e.g. Sat 11 AM – 1 PM IST" />
+                      </div>
+                    </>
+                  )}
                   <div className="flex flex-col gap-1.5">
                     <label htmlFor="name" className="text-sm font-medium text-ink">Full name *</label>
                     <input id="name" name="name" required autoComplete="name" className="rounded-xl border border-line bg-white px-4 py-3 text-sm focus:border-cobalt focus:outline-none" placeholder="Jane Smith" />
@@ -123,8 +147,8 @@ export default function ContactSection({ defaultInquiry }: { defaultInquiry?: st
                     </select>
                   </div>
                   <div className="flex flex-col gap-1.5 sm:col-span-2">
-                    <label htmlFor="message" className="text-sm font-medium text-ink">Project details *</label>
-                    <textarea id="message" name="message" required rows={5} className="rounded-xl border border-line bg-white px-4 py-3 text-sm focus:border-cobalt focus:outline-none" placeholder="What are you building, who is it for, and when do you need it?" />
+                    <label htmlFor="message" className="text-sm font-medium text-ink">{isCall ? "What would you like to discuss? (optional)" : "Project details *"}</label>
+                    <textarea id="message" name="message" required={!isCall} rows={5} className="rounded-xl border border-line bg-white px-4 py-3 text-sm focus:border-cobalt focus:outline-none" placeholder="What are you building, who is it for, and when do you need it?" />
                   </div>
 
                   {/* Honeypot — hidden from humans, tempting to bots */}
@@ -180,9 +204,15 @@ export default function ContactSection({ defaultInquiry }: { defaultInquiry?: st
                 <p className="mt-2 text-sm text-slatex">
                   Book a free 30-minute call and we'll scope your idea live — no obligation.
                 </p>
-                <Link href="/contact?type=call#contact" className="btn-ghost mt-4 w-full">
-                  Schedule a call
-                </Link>
+                {calendly ? (
+                  <a href={calendly} target="_blank" rel="noopener noreferrer" className="btn-ghost mt-4 w-full">
+                    Pick a slot on Calendly
+                  </a>
+                ) : (
+                  <Link href="/contact?type=call#contact" className="btn-ghost mt-4 w-full">
+                    Schedule a call
+                  </Link>
+                )}
               </div>
             </Reveal>
           </div>
