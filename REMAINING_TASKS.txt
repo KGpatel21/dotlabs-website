@@ -220,3 +220,120 @@ DONE THIS ROUND (on the branch):
 STANDING REMINDER:
   🔴 GitHub token — revoke after today's session.
 ════════════════════════════════════════════════════════════════════════════
+
+════════════════════════════════════════════════════════════════════════════
+UPDATE 2 — answers to your screenshot round (same day)
+════════════════════════════════════════════════════════════════════════════
+
+── LINKEDIN "POINT 3" EXPLAINED AGAIN, SIMPLY ──────────────────────────────
+Your worry: "I can't put Sparken as my current job because I work at TatvaSoft."
+The answer: you never need to put Sparken on your personal profile at all.
+
+Think of it like this:
+  • A Company Page and your personal profile are two SEPARATE things.
+  • To create/manage the Sparken page you only become its ADMIN.
+  • Admin is INVISIBLE — nobody (including TatvaSoft) can see you manage it.
+  • Your profile keeps showing only "TatvaSoft" — nothing changes there.
+So: create the page, run it, post from it — your personal profile stays
+untouched. Only IF you someday want the world to see "Founder, Sparken" on
+your profile do you add it (that's optional, later, after checking your
+TatvaSoft contract). ➜ Added to the open list below.
+
+── SITEMAP "INVALID ADDRESS" — THE FIX ─────────────────────────────────────
+Your property is a DOMAIN property (sc-domain:sparkentechnologies.com).
+Domain properties do NOT accept just "sitemap.xml" — they need the FULL URL.
+
+  1. First confirm it exists: open this in your browser —
+       https://www.sparkentechnologies.com/sitemap.xml
+     You should see a page of XML with all your URLs. (It's generated
+     automatically by the site; nothing to create.)
+  2. In Search Console → Sitemaps → paste the FULL URL:
+       https://www.sparkentechnologies.com/sitemap.xml
+     → Submit. Status will show "Success" (sometimes "Couldn't fetch" for a
+     few hours on brand-new sites — resubmit next day if so).
+
+── "WHERE IS TURBO INDEXING?" ──────────────────────────────────────────────
+It's not a menu item — it's the SEARCH BAR at the very top of Search Console
+(the one that says "Inspect any URL in sparkentechnologies.com" in your own
+screenshot). That IS the URL Inspection tool:
+  1. Click that top bar → paste ONE full URL, e.g.
+     https://www.sparkentechnologies.com/  → press Enter
+  2. Wait for the report → click the "REQUEST INDEXING" button.
+  3. Repeat for the other URLs (list in Q7 above). A few per day is fine —
+     there's a daily quota, so spread them out.
+
+── GOOGLE BUSINESS PROFILE — what's pending (from your screenshot) ─────────
+Status decoded: profile EXISTS but is "NOT PUBLICLY VISIBLE" = not verified.
+Do these, in order:
+  1. Click **Get verified** → choose video verification → record per the
+     guide (§8e): your desk, the live website open, hello@ inbox, any
+     registration/GST doc, yourself. That's the one blocker.
+  2. Service area currently "India" — too broad for local ranking. Edit →
+     set Ahmedabad (+ Gandhinagar, Surat… if you want). You can keep serving
+     everyone; this only affects local search relevance.
+  3. Website shows http://sparkentechnologies.com/ → change to
+     https://www.sparkentechnologies.com
+  4. Add these while you wait for verification:
+     • Description (750 chars max — paste):
+       "Sparken Technologies is a software development company from
+        Ahmedabad, India. We build custom software, web and mobile apps,
+        SaaS platforms, and AI solutions, and provide dedicated developers
+        on hourly and monthly models. Independent practice since 2019,
+        incorporated in 2026 — 100+ projects delivered with full source-code
+        and IP ownership for every client. Free consultation at
+        sparkentechnologies.com."
+     • Services (Edit services → add): Custom Software Development · Web
+       Development · Mobile App Development · SaaS Development · AI Solutions
+       · Hire Dedicated Developers · UI/UX Design · Cloud & DevOps
+     • Hours: your realistic availability (e.g. Mon–Sat 10:00–19:00)
+     • Booking link: https://calendly.com/sparken-consultation
+     • Logo: upload the site logo (same as LinkedIn DP)
+     • Phone: you listed 088494 30122 — fine; it stays on Google only
+       (site has no phone by design).
+
+── VERCEL ENV VARS (your screenshot) — anything missing? ───────────────────
+You have all four: ✅ NEXT_PUBLIC_CALENDLY_URL ✅ NEXT_PUBLIC_SHEETS_WEBHOOK
+✅ NEXT_PUBLIC_TURNSTILE_SITE_KEY ✅ TURNSTILE_SECRET_KEY. Nothing missing.
+Two notes:
+  1. TURNSTILE_SECRET_KEY in Vercel is harmless but UNUSED — the place that
+     actually needs the secret is the Apps Script (see APPS_SCRIPT_FULL.gs,
+     line 14). Paste it there.
+  2. ⚠️ IMPORTANT: the Calendly button + call-request form are on the
+     feature branch, NOT yet on main. Redeploying now won't show them.
+     Say "merge" → I merge to main → Vercel auto-builds → everything
+     (env vars included) goes live together.
+
+── CALENDLY LINK — RECEIVED ✅ ──────────────────────────────────────────────
+https://calendly.com/sparken-consultation — you've already set it as
+NEXT_PUBLIC_CALENDLY_URL, so no code change needed. It activates on merge.
+
+── GOOGLE SHEET (your screenshot) — ONE FIX NEEDED ⚠️ ───────────────────────
+Your Calls tab starts with "Name" in column A. The script writes the
+TIMESTAMP first, so every row would land shifted one cell left.
+Fix (10 seconds): Calls tab → right-click column A → "Insert 1 column left"
+→ type  Timestamp  in A1. Final headers:
+  Timestamp | Name | Email | Phone | Preferred Time | Message | Page
+
+── FULL APPS SCRIPT ✅ ──────────────────────────────────────────────────────
+You asked for the complete script instead of piecemeal edits — it's in
+**APPS_SCRIPT_FULL.gs** (repo + outputs). Select-all-delete-paste, add your
+Turnstile secret on line 14, then Deploy → Manage deployments → Edit →
+NEW VERSION. It includes all four form branches + server-side Turnstile
+verification (soft until you paste the secret).
+
+── TESTIMONIALS — STARTED ✅ ────────────────────────────────────────────────
+Per "do point 9 as you like": full outreach kit created —
+**TESTIMONIAL_OUTREACH.md** (WhatsApp + email templates, the
+draft-for-approval trick, follow-up script, tracking table). Your move:
+send it to 5 past clients today. First 3 approved quotes → I swap them in.
+
+── OPEN LIST (delta) ────────────────────────────────────────────────────────
+  [ ] Fix Calls tab: insert Timestamp column A
+  [ ] Paste APPS_SCRIPT_FULL.gs + secret → deploy New version
+  [ ] Sitemap: submit FULL URL https://www.sparkentechnologies.com/sitemap.xml
+  [ ] Request indexing via the top Inspect bar (few URLs/day)
+  [ ] GBP: Get verified (video) + service area Ahmedabad + https website +
+      description/services/hours/booking link
+  [ ] LinkedIn page: create as admin (profile untouched) → send URL
+  [ ] Testimonials: send templates to 5 clients
+  [ ] Say "merge" when ready → call form + Calendly go live
