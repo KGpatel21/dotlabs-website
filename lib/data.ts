@@ -24,7 +24,7 @@ export const site = {
   incorporated: 2026, // registered as Sparken Technologies
   founded: 2019, // used in "years in business" copy (freelance origin)
   social: {
-    linkedin: "https://www.linkedin.com/company/sparken-technologies", // PLACEHOLDER — paste real Company Page URL
+    linkedin: "https://www.linkedin.com/company/sparken-technologies", // ✅ live
   },
 };
 
@@ -616,7 +616,7 @@ export const founder = {
   area: "Architecture · Cloud · AI",
   initials: "KP",
   email: "krutarthpatel@sparkentechnologies.com",
-  linkedin: "https://www.linkedin.com/company/sparken-technologies", // PLACEHOLDER — personal/company URL
+  linkedin: "https://www.linkedin.com/company/sparken-technologies", // ✅ live
   bio: "Backend and systems engineer who architects scalable, cloud-native software and AI-driven platforms. Started Sparken as a freelance practice in 2019 and still reviews the architecture on every major engagement.",
 };
 
