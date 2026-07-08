@@ -44,7 +44,7 @@ export function buildMetadata({
 
 export const organizationSchema = {
   "@context": "https://schema.org",
-  "@type": ["Organization", "ProfessionalService", "LocalBusiness"],
+  "@type": ["Organization", "ProfessionalService"],
   "@id": `${site.url}/#organization`,
   name: site.name,
   alternateName: "Sparken Technologies Software Development Company",
@@ -62,12 +62,6 @@ export const organizationSchema = {
   },
   sameAs: Object.values(site.social),
   numberOfEmployees: { "@type": "QuantitativeValue", value: 25 },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    reviewCount: "20",
-    bestRating: "5",
-  },
   knowsAbout: [
     "Custom Software Development",
     "Web Development",
